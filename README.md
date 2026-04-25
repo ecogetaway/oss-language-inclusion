@@ -1,51 +1,69 @@
+Open source has standardized infrastructure for code contribution, but no equivalent infrastructure for language contribution.
+
 This repository explores whether language inclusion is a missing infrastructure layer in open source.
 
 # Open Source Language Inclusion
 
-**Open source has infrastructure for code, but not for language.**
+**Early evidence suggests** a recurring tension: **code** changes benefit from shared norms (review, CI, bots, attribution), while **language** changes (UI, errors, documentation) often depend on **project-local improvisation** and **maintainer bandwidth**. This repository collects **primary-linked case notes** and **maintainer-facing prompts** so foundations, standards bodies, and digital public goods programs can assess the question empirically—not from marketing copy.
 
-Most projects invest heavily in contribution workflows, CI, and governance for *software* changes. Comparable norms—reviewable, mergeable, attributable—are inconsistent for *translatable* surfaces (UI, errors, documentation). This repo **documents that asymmetry**, gathers **primary-linked examples**, and invites **maintainer notes**. Audience: maintainers, foundations, and standards bodies. **Exploratory only:** not a product pitch or a committed platform.
-
----
-
-## Why this matters
-
-- **Access:** Single-language defaults exclude people regardless of technical skill.
-- **Equity:** Non-English audiences are majorities in many contexts; language is a hard participation boundary.
-- **Quality:** Weak localization affects comprehension, safety-sensitive prompts, and trust.
-- **Resilience:** Broader language coverage improves feedback, documentation, and adoption.
+**Audience:** maintainers, foundations, standards organizations, DPG implementers. **Mode:** exploratory investigation, not a shipped program.
 
 ---
 
-## Evidence in progress
+## Why Now
 
-Worked case notes (each cites upstream issues/PRs):
-
-- [`case-studies/openclaw.md`](case-studies/openclaw.md)
-- [`case-studies/contribution-evidence.md`](case-studies/contribution-evidence.md)
-
----
-
-## The gap
-
-- **Code vs. language:** Pull requests, bots, and review culture are mature for code; translatable content rarely receives the same end-to-end treatment.
-- **Fragmented tooling:** Extraction, glossaries, translator context, and merge discipline are often ad hoc or vendor-specific—not a shared commons.
-- **Recognition:** Trust and credit for linguistic review still lag those for code.
-- **Governance:** Technical programs and specs often center English process; multilingual feedback loops are easy to under-resource.
-- **Sustainability:** Locales drift when translation is decoupled from release cadence, funding, and maintainer time.
+- **Open-source AI tools are becoming global infrastructure** for developers and operators; interfaces and docs remain unevenly localized in ways visible in public issue threads and PR queues.
+- **Non-English developer communities are large and well documented** by major forges and industry analyses; this repo does not duplicate those datasets—it points to **where OSS contribution UX still defaults English-first**.
+- **Localization demand shows up in public artifacts** (issues, open PRs, policy consolidations) **without** a cross-ecosystem equivalent to mature **code** contribution rails—**early evidence suggests** a **capacity and workflow** gap worth treating as infrastructure, not only as isolated project choices.
 
 ---
 
-## Where shared infrastructure might help
+## What This Is / What This Is Not
 
-Working hypotheses—not a roadmap: interoperable formats, clear paths for *linguistic* review (not only string dumps), and coordination across projects to reduce duplicated effort and terminology drift. The point is to **compare notes** and make constraints legible, not to prescribe one stack.
+| What this is | What this is not |
+| -------------- | ------------------ |
+| An **exploration** of a **possible** infrastructure gap between code and language contribution | A **translation project**, agency, or paid service |
+| A **small, checkable evidence set** (case studies with upstream links) | A **finalized** technical proposal or standard |
+| An **invitation** for maintainer experience and corrections | A **vendor** or **tool** endorsement |
+
+---
+
+## What’s Missing Today
+
+Stated as **working observations** from desk research and linked primary sources—not exhaustive:
+
+- **No standardized workflows** for i18n contributions comparable in reach to common code-review conventions.
+- **No CI/CD-like shared pipelines** for linguistic quality (glossary, reviewer assignment, staleness across UI vs docs)—projects approximate this locally or not at all.
+- **Limited cross-project tooling support**; much extraction and review remains **ad hoc** or **vendor-specific**.
+- **Weak contributor recognition** for sustained linguistic review relative to code.
+- **Heavy dependence on maintainer bandwidth** for triage, native review, and release alignment—often the explicit constraint in public maintainer statements.
+
+---
+
+## Evidence
+
+- [`case-studies/openclaw.md`](case-studies/openclaw.md) — canonical upstream issue, maintainer-stated bandwidth.
+- [`case-studies/contribution-evidence.md`](case-studies/contribution-evidence.md) — cross-project PR/issue states (Hindi-related examples preserved with links).
+- [`problem-definition.md`](problem-definition.md) — working definition of the “language inclusion gap.”
+
+---
+
+## Potential Next Step
+
+**Hypotheses only—no commitment from this repo:**
+
+- The work **could** evolve into a **neutral working group** (foundation-hosted or multi-stakeholder) if institutions want shared problem framing.
+- It **could** contribute to **documented workflows** (templates, review checklists, metadata conventions) *if* maintainers converge on repeatable patterns.
+- It **could** inform **platform-level** discussions (e.g. forge features, grant criteria) **without** implying GitHub or any vendor has endorsed this investigation.
+
+Institutional uptake requires governance, evidence policy, and neutral stewardship—see [`maintainer-feedback/README.md`](maintainer-feedback/README.md).
 
 ---
 
 ## How to engage
 
-- **Maintainer feedback:** [`maintainer-feedback/README.md`](maintainer-feedback/README.md) — neutral prompts; contribute via [issues](https://github.com/ecogetaway/oss-language-inclusion/issues) with public links where you can.
-- **Corrections and disagreement** are welcome; cite sources so claims stay checkable.
+- **Maintainer notes:** [`maintainer-feedback/README.md`](maintainer-feedback/README.md) — optional structured format; [open an issue](https://github.com/ecogetaway/oss-language-inclusion/issues) with public links where possible.
+- **Corrections:** preferred with citations to upstream issues/PRs/commits.
 
 ---
 
@@ -54,6 +72,7 @@ Working hypotheses—not a roadmap: interoperable formats, clear paths for *ling
 ```
 oss-language-inclusion/
 ├── README.md
+├── problem-definition.md
 ├── roadmap.md
 ├── case-studies/
 ├── maintainer-feedback/
@@ -63,9 +82,11 @@ oss-language-inclusion/
 
 ---
 
-## Status
+## Current Status
 
-**Early-stage exploration.** No fixed deliverable list; direction follows maintainer and foundation feedback and work already happening elsewhere.
+- **Case studies documented** with upstream URLs (Open WebUI, Kilo-Org/kilocode, Hoppscotch, Hermes Agent, OpenClaw—see `case-studies/`).
+- **Seeking maintainer feedback** via issues and `maintainer-feedback/README.md`.
+- **Early outreach underway**; no fixed roadmap or funded program embedded in this repository.
 
 ---
 
