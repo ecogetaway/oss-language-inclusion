@@ -2,7 +2,7 @@
 
 **Open source has infrastructure for code, but not for language.**
 
-This initiative documents a systemic gap: projects invest heavily in contribution workflows, CI, and governance for *software* changes, while *localization and translation* often lack comparable tooling, recognition, and pathways for contributors. The result is slower progress toward equitable global access to software and documentation.
+This repository explores whether language inclusion is a missing infrastructure layer in open source. Concretely, it documents a systemic gap: projects invest heavily in contribution workflows, CI, and governance for *software* changes, while *localization and translation* often lack comparable tooling, recognition, and pathways for contributors. The result is slower progress toward equitable global access to software and documentation.
 
 This repository is aimed at open-source maintainers, foundations, and standards bodies who set norms and build shared infrastructure. It is not a product pitch; it is a place to name the problem, gather evidence, and shape what *good* could look like at ecosystem scale.
 
