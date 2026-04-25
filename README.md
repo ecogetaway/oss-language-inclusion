@@ -53,6 +53,7 @@ This repository is a starting point to describe that vision in concrete terms an
 
 If you maintain a project, run a program in a foundation, or shape contribution policy: **this needs your experience.**
 
+- **Maintainer feedback hub:** see [`maintainer-feedback/README.md`](maintainer-feedback/README.md) for why we are collecting notes, how to contribute, and example prompts—neutral and optional.
 - Open an [issue](https://github.com/ecogetaway/oss-language-inclusion/issues) to share constraints (what failed, what almost worked, what you would need from the ecosystem).
 - Point to public discussions or documentation that should be in the evidence section.
 - Suggest structure for this repository if you believe a different framing would help standards bodies and platform teams.
@@ -65,11 +66,16 @@ Constructive disagreement is welcome. The aim is a clearer shared picture, not a
 
 ```
 oss-language-inclusion/
-├── README.md                 # This document — problem, vision, and calls to action
-└── (future)                  # e.g. evidence appendices, templates, or notes — as the project grows
+├── README.md                      # Problem framing, vision, calls to action
+├── roadmap.md                     # Placeholder for direction (early stage)
+├── case-studies/                  # Verifiable project notes (e.g. OpenClaw, contribution evidence)
+├── maintainer-feedback/           # Invitation + prompts for maintainer experience
+│   └── README.md
+├── contributors/                  # Reserved for contributor-facing notes
+└── (future)                       # e.g. docs/evidence-policy.md, GOVERNANCE.md
 ```
 
-*Expand this section as you add files (e.g. `docs/`, `case-studies/`, or contribution guidelines for *this* repo).*
+*Expand as artifacts grow; prefer links to primary sources in case studies.*
 
 ---
 
