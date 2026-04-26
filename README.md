@@ -8,7 +8,7 @@ This repository explores whether language inclusion is a missing infrastructure 
 
 ## Terminology used in this repo
 
-- **signals** = processed patterns
+- **signals** = synthesized patterns
 - **feedback** = raw input
 - **contributors** = people
 
@@ -40,11 +40,11 @@ This repository explores whether language inclusion is a missing infrastructure 
 
 ---
 
-## Signals
+## Signals from the Ecosystem
 
-- [`signals/maintainer-signals.md`](signals/maintainer-signals.md)
-- [`signals/contributor-signals.md`](signals/contributor-signals.md)
-- [`signals/signals-overview.md`](signals/signals-overview.md)
+- [Maintainer Signals](signals/maintainer-signals.md)
+- [Contributor Signals](signals/contributor-signals.md)
+- [Signals Overview](signals/signals-overview.md)
 
 ---
 
