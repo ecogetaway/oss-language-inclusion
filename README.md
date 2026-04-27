@@ -48,9 +48,11 @@ This repository explores whether language inclusion is a missing infrastructure 
 
 ---
 
-## Input Channels
+## How to participate
 
-- Raw maintainer input: [`maintainer-feedback/README.md`](maintainer-feedback/README.md)
+See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to use templates, and how listing in [`contributors/README.md`](contributors/README.md) works (opt-in only).
+
+- Raw maintainer input: [`maintainer-feedback/README.md`](maintainer-feedback/README.md) → [open an issue](https://github.com/ecogetaway/oss-language-inclusion/issues/new/choose)
 - Contributors index: [`contributors/README.md`](contributors/README.md)
 
 ---
@@ -60,12 +62,14 @@ This repository explores whether language inclusion is a missing infrastructure 
 ```
 oss-language-inclusion/
 ├── README.md
+├── CONTRIBUTING.md
 ├── problem-definition.md
 ├── roadmap.md
 ├── case-studies/
 ├── signals/
 ├── maintainer-feedback/
-└── contributors/
+├── contributors/
+└── .github/ISSUE_TEMPLATE/
 ```
 
 ---

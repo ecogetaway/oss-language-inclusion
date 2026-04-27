@@ -1,7 +1,8 @@
 # Contributors
 
-This folder lists people who have contributed to language (i18n) efforts or participated in related discussions for this repository.
-It is a participant index only.
+This folder lists **people** (language contributors or other participants) who have contributed to this repository’s i18n-related work or who **opt in** to be named here. It is a **consent-based** list, not a signals or evidence document. Maintainer *experience* is collected via [issues / maintainer feedback](../maintainer-feedback/README.md), not this file.
+
+**The list is populated only with opt-in names.** If you would like a line here, open an [issue](https://github.com/ecogetaway/oss-language-inclusion/issues/new/choose) (use **Correction, question, or general note**) and state the exact text you agree to.
 
 ## Contributors
 
