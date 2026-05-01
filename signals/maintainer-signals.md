@@ -12,3 +12,5 @@ This file summarizes **patterns** from maintainer-side input and public maintain
 ## Scope Note
 
 These are repository-level signals, not ecosystem-wide proof. See upstream-linked case studies in `case-studies/` for source context.
+
+- Solo developer (Unity-based project): Absence of predefined i18n structure forces custom workarounds, increasing workload and long-term fragility
