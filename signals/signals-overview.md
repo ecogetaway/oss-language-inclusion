@@ -10,3 +10,10 @@ Maintainer-side and contributor-side signals in this repository point to similar
 - Heavy reliance on maintainer bandwidth
 - Lack of tooling and review infrastructure
 - Difficulty scaling language support
+
+## Key Emerging Patterns
+
+- Lack of structured i18n workflows leads to inconsistent implementations
+- Naming ambiguity and context loss are recurring technical issues
+- Absence of governance results in technical debt over time
+- Maintainers lack bandwidth to support language contributions
