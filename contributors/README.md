@@ -9,3 +9,5 @@ This folder lists **people** (language contributors or other participants) who h
 - Example entry: `@username` — language contributor (pending consent)
 
 (*Names included only with consent*)
+
+- @arsalas — i18n workflow case study (web + gaming), maintainer perspective (Unity-based projects)
