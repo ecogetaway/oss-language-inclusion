@@ -23,10 +23,20 @@ The issue description’s initial “languages requested (tracking)” checklist
 Maintainers **did not** open a sustained, merge-friendly path for Hindi (or other) localization during the life of that thread. On the public record, policy was to **close new translation PRs** and **close separate language requests as duplicates** of #3460 until a deliberate i18n approach existed. The issue was later **closed** (GitHub: **not planned**) and **locked**, with closure framed around **platform and documentation architecture** and maintainers **soliciting localized content when the project explicitly chooses to**.
 
 The limiting factors described publicly were **operational** (capacity, architecture, coordination)—not a claim that Hindi lacked value.
-
 ---
+## Community Demand 
+---
+## Key Maintainer Signals (verbatim)
 
-## Maintainer feedback
+> "we don't currently have the bandwidth to properly support multiple languages"
+
+> "We need to establish a proper i18n architecture first"
+
+> "Maintaining translations requires ongoing effort as the product evolves"
+
+> "If we need any localized content we will ask the community to provide"
+---
+## Interpretation of Maintainer Constraints
 
 **Lack of i18n bandwidth** is stated directly in the issue body (quoted from [#3460](https://github.com/openclaw/openclaw/issues/3460)):
 
@@ -40,8 +50,9 @@ Supporting reasons on the record are **engineering and process constraints**:
 - **UI, errors, and documentation** must stay coordinated.
 
 The **April 2026** closure comment (public record) states **architectural changes** to platform and documentation; localized content will be requested from the community **when the project needs it**.
+----
 
----
+----
 
 ## Key insight
 
