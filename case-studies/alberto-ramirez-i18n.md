@@ -35,5 +35,10 @@ Based on my experience, the review process varies by project scale:
 
 - Small/Ad Hoc Projects: Developers manage JSON files manually, often using automated translation tools as a baseline followed by manual peer reviews.
 
+### Observed Challenges & Friction
+* **Key Ambiguity:** Using generic or highly similar keys (e.g., `button_save` vs `save_label`) often leads to accidental reuse. 
+* **Context Loss:** Reusing a key in different UI sections saves time initially but creates issues later; changing the text for one specific use case might inadvertently break another section of the app.
+* **Dictionary Bloat:** Without a strict naming convention, it becomes difficult for maintainers to identify if a key is still in use or redundant, increasing the risk of "dead" translation strings.
+
 ### Conclusion
-Key-based JSON management remains a solid industry standard due to its simplicity and compatibility with professional translation software.
+Observations across projects suggest that while key-based JSON management is the industry standard, its success depends on strict governance. Standardizing the naming conventions early—rather than relying on ad hoc workarounds—significantly reduces the maintainer's workload and prevents technical debt as the application scales.
