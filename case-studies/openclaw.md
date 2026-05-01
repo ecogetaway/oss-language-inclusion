@@ -51,7 +51,23 @@ Supporting reasons on the record are **engineering and process constraints**:
 
 The **April 2026** closure comment (public record) states **architectural changes** to platform and documentation; localized content will be requested from the community **when the project needs it**.
 ----
+## Supporting Evidence from Linked PRs
 
+### PR #42089 — Multilingual Mobile Localization Attempt
+
+A contributor implemented full multilingual support across iOS and Android, including Chinese (Simplified/Traditional) and Japanese, with UI coverage and testing.
+
+**Outcome:**
+The PR was closed without merge and redirected to the canonical i18n issue (#3460).
+
+**Maintainer / system signal:**
+
+> "translation PRs are being consolidated/closed until the i18n architecture is ready"
+
+> "Future native i18n should wait for a maintainer-requested path"
+
+**Insight:**
+Even large, technically complete localization contributions are not accepted without a predefined i18n architecture and maintainer-led workflow.
 ----
 
 ## Key insight
