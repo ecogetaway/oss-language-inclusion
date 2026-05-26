@@ -11,3 +11,15 @@ This folder lists **people** (language contributors or other participants) who h
 (*Names included only with consent*)
 
 - @arsalas — i18n workflow case study (web + gaming), maintainer perspective (Unity-based projects)
+
+
+
+
+
+## Hoppscotch — Hindi Localization
+
+Source: Shared privately via email (May 2026)
+
+A contributor involved in Hindi localization for Hoppscotch noted that localization workflows remained largely manual. Automated bot reviews helped identify missing translation keys and consistency issues, but maintaining translations at scale was still difficult without more structured tooling support.
+
+The contributor nevertheless described the experience positively and appreciated that the project welcomed Hindi localization contributions.
