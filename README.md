@@ -78,8 +78,9 @@ oss-language-inclusion/
 If you have observations, experiences, or general comments related to OSS internationalization (i18n), localization workflows, multilingual contribution challenges, or translation tooling, feel free to open an issue using the `community-feedback` label.
 
 Feedback does not need to be tied to a specific pull request or bug report. General contributor and maintainer experiences are also valuable.
-
 Short notes, examples, and ecosystem observations are all welcome.
+
+
 ---
 
 ## Current Status
