@@ -18,3 +18,7 @@ This file captures contributor-side **patterns** from public i18n participation 
 
 - Contributor (web + gaming): Generic or reused i18n keys lead to ambiguity and context loss across UI components
 - Contributor: Lack of strict naming conventions leads to “dead” or redundant translation strings, increasing maintenance complexity
+
+## Additional Signals 
+- Contributor (Kilo Code): Localization contributions follow the standard PR review process rather than a dedicated language-review workflow. Review quality and turnaround depend largely on contributor and maintainer availability.
+Source: https://github.com/Kilo-Org/kilocode/pull/8377
