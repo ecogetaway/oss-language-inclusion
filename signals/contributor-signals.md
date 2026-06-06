@@ -22,3 +22,8 @@ This file captures contributor-side **patterns** from public i18n participation 
 ## Additional Signals 
 - Contributor (Kilo Code): Localization contributions follow the standard PR review process rather than a dedicated language-review workflow. Review quality and turnaround depend largely on contributor and maintainer availability.
 Source: https://github.com/Kilo-Org/kilocode/pull/8377
+
+- Contributor (OpenStatus): Community-assisted language review helped improve Hindi localization quality prior to merge, demonstrating how peer reviewers can supplement maintainer review for i18n contributions.
+
+  Source:
+  https://github.com/openstatusHQ/openstatus/pull/2193
