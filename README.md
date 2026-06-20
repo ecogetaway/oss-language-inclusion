@@ -96,9 +96,9 @@ Short notes, examples, and ecosystem observations are all welcome.
 
 
 Case studies documented with upstream PR/issue links across Open WebUI, Kilocode, Hoppscotch, OpenClaw, and Hermes Agent.
-Signals split into maintainer, contributor, and overview files.
-Maintainer feedback and contributors now separated from signals.
-Article published: "Open Source's Hidden Language Gap," CACM Blog, May 2026.
-Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
-Project website: ossinfrainitiative.netlify.app
-Licensed under Apache 2.0.
+-Signals split into maintainer, contributor, and overview files.
+-Maintainer feedback and contributors now separated from signals.
+-Article published: "Open Source's Hidden Language Gap," CACM Blog, May 2026.
+-Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
+-Project website: ossinfrainitiative.netlify.app
+-Licensed under Apache 2.0.
