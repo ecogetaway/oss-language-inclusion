@@ -47,6 +47,24 @@ No existing i18n specification — including W3C, GNU gettext documentation, or 
 - [`problem-definition.md`](problem-definition.md)
 
 ---
+## Tools
+
+This repository is expanding from an evidence base into runnable infrastructure. Tooling lives under `tools/` as independently installable packages, each with its own README, tests, and a published GitHub Action.
+
+### `tools/i18n-security-lint` — Translated-String Security Linter
+A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) for the four vulnerability classes documented in [Security Scope](#security-scope):
+- Unicode bidirectional override attacks
+- Cross-site scripting (XSS) in rendered locale content
+- Format-specifier tampering
+- Interpolation-variable integrity failures
+
+Status: scaffolding (bidi-character scanner first).  This is the flagship security deliverable, demonstrated as required.
+---
+### `tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker
+Verifies that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular). Pairs with the security linter as a combined "i18n quality gate."
+
+Both tools are designed to be extracted into their own repositories later if an organization or adopter requests it.
+---
 
 ## Signals from the Ecosystem
 
@@ -65,23 +83,26 @@ See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to us
 
 ---
 
-## Repository structure
+##  Repository structure
 
-```
 oss-language-inclusion/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── problem-definition.md
 ├── roadmap.md
+├── tools/
+│   ├── i18n-security-lint/   # Translated-string security linter (CLI + Action) — P1
+│   └── cldr-plural-check/    # CLDR plural-rule conformance checker — P3
+├── docs/                     # User/entry documentation
+├── spec/                     # Tool & signal specifications
 ├── case-studies/
 ├── signals/
 ├── maintainer-feedback/
 ├── contributors/
 └── .github/ISSUE_TEMPLATE/
-```
-
 ---
-## ## Sharing Community Feedback
+
+## Sharing Community Feedback
 
 If you have observations, experiences, or general comments related to OSS internationalization (i18n), localization workflows, multilingual contribution challenges, or translation tooling, feel free to open an issue using the `community-feedback` label.
 
@@ -102,3 +123,4 @@ Case studies documented with upstream PR/issue links across Open WebUI, Kilocode
 -Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
 -Project website: ossinfrainitiative.netlify.app
 -Licensed under Apache 2.0.
+- Tooling scaffolded under `tools/` (i18n-security-lint, cldr-plural-check); `spec/` and `docs/` added.
