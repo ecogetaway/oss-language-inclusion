@@ -51,7 +51,7 @@ No existing i18n specification — including W3C, GNU gettext documentation, or 
 
 This repository is expanding from an evidence base into runnable infrastructure. Tooling lives under `tools/` as independently installable packages, each with its own README, tests, and a published GitHub Action.
 
-### `tools/i18n-security-lint` — Translated-String Security Linter
+##`tools/i18n-security-lint` — Translated-String Security Linter
 A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) for the four vulnerability classes documented in [Security Scope](#security-scope):
 - Unicode bidirectional override attacks
 - Cross-site scripting (XSS) in rendered locale content
@@ -60,7 +60,7 @@ A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) f
 
 Status: scaffolding (bidi-character scanner first).  This is the flagship security deliverable, demonstrated as required.
 ---
-### `tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker
+##`tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker
 Verifies that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular). Pairs with the security linter as a combined "i18n quality gate."
 
 Both tools are designed to be extracted into their own repositories later if an organization or adopter requests it.
@@ -84,6 +84,7 @@ See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to us
 ---
 
 ##  Repository structure
+
 
 oss-language-inclusion/
 ├── README.md
