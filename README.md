@@ -83,25 +83,27 @@ See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to us
 
 ---
 
-##  Repository structure
 
+## Repository structure
 
+```
 oss-language-inclusion/
 ├── README.md
 ├── CONTRIBUTING.md
 ├── problem-definition.md
 ├── roadmap.md
 ├── tools/
-│   ├── i18n-security-lint/   # Translated-string security linter (CLI + Action) — P1
-│   └── cldr-plural-check/    # CLDR plural-rule conformance checker — P3
-├── docs/                     # User/entry documentation
-├── spec/                     # Tool & signal specifications
+│   ├── i18n-security-lint/
+│   ├── cldr-plural-check/
+│   └── docs/
+├── spec/
 ├── case-studies/
 ├── signals/
 ├── maintainer-feedback/
 ├── contributors/
-└── .github/ISSUE_TEMPLATE/
----
+└── .github/
+    └── ISSUE_TEMPLATE/
+```
 
 ## Sharing Community Feedback
 
