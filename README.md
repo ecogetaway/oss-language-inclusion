@@ -1,7 +1,5 @@
 Open source has standardized infrastructure for code contribution, but no equivalent infrastructure for language contribution.
-
  This repository explores language inclusion as a missing infrastructure layer in open source — and now converts that evidence into runnable tooling: a translated-string security linter and a CLDR plural-rule conformance checker that any project can drop into CI.
-
 # Open Source Language Inclusion
 *From evidence base to shippable i18n infrastructure.*
 
