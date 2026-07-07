@@ -1,0 +1,21 @@
+name: "i18n Security Lint"
+description: "Scans locale files for translated-string security defects (bidi, XSS, format, interpolation)."
+author: "Open Source Language Inclusion"
+branding:
+  icon: "shield"
+  color: "blue"
+inputs:
+  path:
+    description: "File, glob, or directory of locale files to scan"
+    required: true
+    default: "locale/"
+  strict:
+    description: "Fail the build when findings are reported"
+    required: false
+    default: "true"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "${{ inputs.path }}"
+    - "--strict"

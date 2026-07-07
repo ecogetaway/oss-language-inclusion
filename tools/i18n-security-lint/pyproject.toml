@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "i18n-security-lint"
+version = "0.1.0"
+description = "Scans locale files for translated-string security defects (bidi, XSS, format, interpolation)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.scripts]
+i18n-security-lint = "i18n_security_lint.cli:main"
+
+[tool.setuptools]
+packages = ["i18n_security_lint"]

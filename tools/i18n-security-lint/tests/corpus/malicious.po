@@ -1,0 +1,8 @@
+msgid ""
+msgstr ""
+
+msgid "Welcome %s to the app"
+msgstr "Welcome %s to the app"
+
+msgid "Your balance is %d"
+msgstr "Your balance is %s"
