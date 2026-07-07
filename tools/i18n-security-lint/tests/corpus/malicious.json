@@ -1,0 +1,6 @@
+{
+  "greeting": "Hello <script>alert(1)</script>",
+  "direction": "Right‪to‫left",
+  "welcome": "Welcome %s to the app",
+  "farewell": "Goodbye, friend"
+}
