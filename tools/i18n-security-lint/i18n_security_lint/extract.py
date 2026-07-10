@@ -65,8 +65,10 @@ def _from_po(path: Path, text: str) -> Iterator[Entry]:
 
 
 def _from_xliff(path: Path, text: str) -> Iterator[Entry]:
+    # Yield raw inner text: stripping markup here would delete embedded HTML
+    # (e.g. <img onerror=...>) before the XSS scanner ever sees it.
     for m in re.finditer(r"<target[^>]*>(.*?)</target>", text, re.DOTALL):
-        value = re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        value = m.group(1).strip()
         if value:
             yield Entry(location=str(path), value=value)
 

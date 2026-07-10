@@ -57,10 +57,10 @@ A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) f
 - Format-specifier tampering
 - Interpolation-variable integrity failures
 
-Status: scaffolding (bidi-character scanner first).  This is the flagship security deliverable, demonstrated as required.
+Status: working scaffolding — all four checks implemented, with a test suite and CI (see `.github/workflows/ci.yml`) that runs the scanner against a corpus of malicious locale files on every push. This is the flagship security deliverable, demonstrated as required. Vulnerability reports: see [SECURITY.md](SECURITY.md).
 ---
-##`tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker
-Verifies that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular). Pairs with the security linter as a combined "i18n quality gate."
+##`tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker (planned)
+Planned, not yet implemented: will verify that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular), pairing with the security linter as a combined "i18n quality gate."
 
 Both tools are designed to be extracted into their own repositories later if an organization or adopter requests it.
 ---

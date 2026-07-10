@@ -1,0 +1,8 @@
+msgid ""
+msgstr ""
+
+msgid "Hello {userName}, you have {count} messages"
+msgstr "Bonjour {user_name}, vous avez {count} messages"
+
+msgid "Signed in as {email}"
+msgstr "Connecte en tant que {email}"
