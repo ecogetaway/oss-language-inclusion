@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: i18n-security-lint test suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+      - name: Install tool and test dependencies
+        working-directory: tools/i18n-security-lint
+        run: pip install -e . pytest
+      - name: Run tests
+        working-directory: tools/i18n-security-lint
+        run: pytest -v tests/
+
+  dogfood:
+    name: Dogfood scanner on corpus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.12"
+      - name: Install scanner
+        run: pip install tools/i18n-security-lint/
+      - name: Scanner must flag every known-malicious corpus file
+        working-directory: tools/i18n-security-lint/tests/corpus
+        run: |
+          for f in malicious.json malicious.po malicious.xlf malicious.ftl interpolation.po; do
+            if i18n-security-lint --strict "$f"; then
+              echo "::error::scanner failed to flag known-malicious file: $f"
+              exit 1
+            fi
+          done
+      - name: Scanner must pass the clean corpus file
+        working-directory: tools/i18n-security-lint/tests/corpus
+        run: i18n-security-lint --strict clean.json
