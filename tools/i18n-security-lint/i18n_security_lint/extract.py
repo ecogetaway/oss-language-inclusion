@@ -70,14 +70,15 @@ def _from_xliff(path: Path, text: str) -> Iterator[Entry]:
     for m in re.finditer(r"<target[^>]*>(.*?)</target>", text, re.DOTALL):
         value = m.group(1).strip()
         if value:
-            yield Entry(location=str(path), value=value)
+            line_no = text.count("\n", 0, m.start()) + 1
+            yield Entry(location=f"{path}:{line_no}", value=value)
 
 
 def _from_fluent(path: Path, text: str) -> Iterator[Entry]:
-    for line in text.splitlines():
+    for line_no, line in enumerate(text.splitlines(), start=1):
         m = re.match(r"^\s*\w[\w\-]*\s*=\s*(.*)$", line)
         if m:
-            yield Entry(location=str(path), value=m.group(1).strip())
+            yield Entry(location=f"{path}:{line_no}", value=m.group(1).strip())
 
 
 def _unquote(s: str) -> str:
