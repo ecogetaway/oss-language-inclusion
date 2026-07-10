@@ -1,0 +1,6 @@
+{
+  "greeting": "Hello, welcome to the app",
+  "welcome": "Welcome %s to the app",
+  "items": "You have {count} new messages",
+  "farewell": "Goodbye, friend"
+}

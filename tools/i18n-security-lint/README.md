@@ -54,10 +54,17 @@ so the tool drops straight into a CI pipeline.
 
 ## Status
 
-Scaffolding. The bidi scanner is the first and highest-signal check; format,
-interpolation, and XSS checks are implemented for `.po` pairs and basic JSON/XLIFF/Fluent
-text. This is the flagship security deliverable of the Open Source Language
-Inclusion initiative, demonstrated as required.
+Working scaffolding. All four checks are implemented: bidi and XSS for every
+supported format, format-specifier and interpolation-variable drift for `.po`
+source/translation pairs. The test suite covers each check across JSON, gettext,
+XLIFF, and Fluent corpus files, and the repository's CI dogfoods the scanner
+against the malicious corpus on every push (it must flag every malicious file
+and pass the clean one). This is the flagship security deliverable of the Open
+Source Language Inclusion initiative, demonstrated as required.
+
+Known limitations: detection is pattern-based, not parser-accurate — see the
+repository's [SECURITY.md](../../SECURITY.md) for scope and how to report
+bypasses.
 
 ## License
 
