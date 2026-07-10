@@ -3,6 +3,10 @@ Open source has standardized infrastructure for code contribution, but no equiva
 # Open Source Language Inclusion
 *From evidence base to shippable i18n infrastructure.*
 
+**Provenance.** Part of the **OSS Infrastructure Initiative** (Sanjay C. and Aniruddh Raghavendra) — an evidence-first portfolio applying one method across three under-served open source contribution domains: internationalization, accessibility, and AI contribution. First published April 2026. Full portfolio under [Companion Projects](#companion-projects) below.
+
+_Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (i18n-security-lint)._
+
 **Early evidence suggests** a recurring pattern: code contribution has mature shared workflows, while language contribution often depends on local process and maintainer capacity.
 
 ## Terminology used in this repo
@@ -111,6 +115,18 @@ If you have observations, experiences, or general comments related to OSS intern
 Feedback does not need to be tied to a specific pull request or bug report. General contributor and maintainer experiences are also valuable.
 Short notes, examples, and ecosystem observations are all welcome.
 
+
+---
+
+## Companion Projects
+
+Three repositories, one method: document how a contribution domain actually fails in real repositories, then build the smallest machine-readable piece of infrastructure the evidence says is missing. Each domain's adoption compounds the others' credibility.
+
+| Domain | Repository | What it builds | Maturity |
+| --- | --- | --- | --- |
+| Internationalization | [oss-language-inclusion](https://github.com/ecogetaway/oss-language-inclusion) | Translated-string contribution evidence + `i18n-security-lint` CI tooling | Most developed; method published in CACM Blog and DevOps.com |
+| Accessibility | [oss-accessibility-inclusion](https://github.com/ecogetaway/oss-accessibility-inclusion) | How accessibility PRs are reviewed; review rubric + draft `a11y-signals.yml` | Active — current development focus |
+| AI contribution | [oss-ai-contribution-policy](https://github.com/ecogetaway/oss-ai-contribution-policy) | Machine-readable `ai-contribution-policy.yml` standard (verification over detection) | Early evidence-gathering |
 
 ---
 
