@@ -19,7 +19,9 @@ def _scan_file(path: Path) -> Dict[str, List[Finding]]:
         found += scan_xss(entry.value)
         found += compare_placeholders(entry.source, entry.value)
         if found:
-            results[entry.location] = found
+            # Accumulate: two entries can share a location, and assigning here
+            # would silently discard the earlier entry's findings.
+            results.setdefault(entry.location, []).extend(found)
     return results
 
 

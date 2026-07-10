@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from i18n_security_lint.cli import main
+from i18n_security_lint.cli import _scan_file, main
 from i18n_security_lint.extract import extract
 from i18n_security_lint.scanners import compare_placeholders, scan_bidi, scan_xss
 
@@ -61,3 +61,29 @@ def test_cli_json_output_is_valid_json(capsys):
     main(["--json", str(CORPUS / "malicious.json")])
     report = json.loads(capsys.readouterr().out)
     assert report, "expected findings in JSON report"
+
+
+def _rules_reported(path: Path) -> set:
+    """All rules surfaced through the aggregation path the CLI actually uses."""
+    return {f.rule for findings in _scan_file(path).values() for f in findings}
+
+
+def test_scan_file_reports_every_finding_in_xliff():
+    # Regression: entries sharing a location key overwrote one another in
+    # _scan_file, so the XSS payload in the first <target> was silently
+    # dropped once a later <target> produced a bidi finding.
+    rules = _rules_reported(CORPUS / "malicious.xlf")
+    assert {"XSS_PAYLOAD", "BIDI_OVERRIDE"} <= rules, f"findings dropped: {rules}"
+
+
+def test_scan_file_reports_every_finding_in_fluent():
+    rules = _rules_reported(CORPUS / "malicious.ftl")
+    assert {"XSS_PAYLOAD", "BIDI_OVERRIDE"} <= rules, f"findings dropped: {rules}"
+
+
+def test_extract_locations_are_distinct_per_entry():
+    # Distinct locations are what make the accumulation correct *and* the
+    # report actionable — a maintainer needs the line, not just the filename.
+    for name in ("malicious.xlf", "malicious.ftl"):
+        locations = [e.location for e in extract(CORPUS / name)]
+        assert len(locations) == len(set(locations)), f"{name}: duplicate locations"
