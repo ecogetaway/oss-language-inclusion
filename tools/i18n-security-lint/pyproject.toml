@@ -5,11 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "i18n-security-lint"
 version = "0.1.0"
-description = "Scans locale files for translated-string security defects (bidi, XSS, format, interpolation)."
+description = "Scans locale files for translated-string security defects: Unicode bidi overrides, XSS payloads, and format/interpolation placeholder drift."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
+authors = [{ name = "OSS Infrastructure Initiative" }]
+keywords = ["i18n", "l10n", "security", "linter", "locale", "translations", "bidi", "trojan-source", "xss", "gettext", "xliff", "fluent"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Internationalization",
+    "Topic :: Security",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ecogetaway/oss-language-inclusion/tree/main/tools/i18n-security-lint"
+Repository = "https://github.com/ecogetaway/oss-language-inclusion"
+Issues = "https://github.com/ecogetaway/oss-language-inclusion/issues"
+Security = "https://github.com/ecogetaway/oss-language-inclusion/blob/main/SECURITY.md"
 
 [project.scripts]
 i18n-security-lint = "i18n_security_lint.cli:main"
