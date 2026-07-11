@@ -28,6 +28,12 @@ It checks the four vulnerability classes documented in the parent repository's
 ## Install
 
 ```bash
+pip install i18n-security-lint
+```
+
+Or, for development, from this directory:
+
+```bash
 pip install -e .
 ```
 

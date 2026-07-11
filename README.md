@@ -7,6 +7,32 @@ Open source has standardized infrastructure for code contribution, but no equiva
 
 _Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (i18n-security-lint)._
 
+[![PyPI](https://img.shields.io/pypi/v/i18n-security-lint)](https://pypi.org/project/i18n-security-lint/) [![CI](https://github.com/ecogetaway/oss-language-inclusion/actions/workflows/ci.yml/badge.svg)](https://github.com/ecogetaway/oss-language-inclusion/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
+## Quickstart — scan your locale files in 60 seconds
+
+```bash
+pip install i18n-security-lint
+i18n-security-lint --strict locales/
+```
+
+Real output (from this repository's test corpus):
+
+```text
+FAIL: translated-string security defects found:
+
+== malicious.xlf
+   malicious.xlf:7
+     [HIGH] XSS_PAYLOAD: Possible XSS payload fragment: <img
+   malicious.xlf:11
+     [HIGH] BIDI_OVERRIDE: Unicode bidirectional control character U+202E detected
+== interpolation.po
+   interpolation.po:'Hello {userName}…'
+     [MEDIUM] PLACEHOLDER_DRIFT: source=['{count}', '{userName}'] translation=['{count}', '{user_name}']
+```
+
+Exit code 1 under `--strict`, so it drops straight into CI. Formats: JSON, gettext `.po`, XLIFF, Fluent. Details: [`tools/i18n-security-lint`](tools/i18n-security-lint/).
+
 **Early evidence suggests** a recurring pattern: code contribution has mature shared workflows, while language contribution often depends on local process and maintainer capacity.
 
 ## Terminology used in this repo
