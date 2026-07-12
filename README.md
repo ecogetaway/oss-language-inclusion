@@ -33,7 +33,25 @@ FAIL: translated-string security defects found:
 
 Exit code 1 under `--strict`, so it drops straight into CI. Formats: JSON, gettext `.po`, XLIFF, Fluent. Details: [`tools/i18n-security-lint`](tools/i18n-security-lint/).
 
-**Early evidence suggests** a recurring pattern: code contribution has mature shared workflows, while language contribution often depends on local process and maintainer capacity.
+### Try this first
+
+| Priority | Action |
+| --- | --- |
+| **1. Primary** | `pip install i18n-security-lint` and scan your `locales/` (or `locale/`, `i18n/`) directory |
+| **2. Secondary** | Drop the check into CI with the GitHub Action below |
+| **3. Then** | [Open an issue](https://github.com/ecogetaway/oss-language-inclusion/issues/new/choose) with a false positive, a missed format, or your first real finding — that feedback shapes the next release |
+
+**GitHub Action (copy-paste):**
+
+```yaml
+- uses: ecogetaway/oss-language-inclusion/tools/i18n-security-lint@main
+  with:
+    path: locales/
+```
+
+Please do **not** ask people to star the repo. The useful signal is an install, a CI run, or a filed finding.
+
+Code contribution has mature shared workflows; language contribution often still depends on local process and maintainer capacity. This repository turns that gap into a runnable security check.
 
 ## Terminology used in this repo
 
