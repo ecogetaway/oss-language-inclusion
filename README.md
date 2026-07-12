@@ -16,6 +16,8 @@ pip install i18n-security-lint
 i18n-security-lint --strict locales/
 ```
 
+![Demo: i18n-security-lint finds XSS, bidi overrides, and placeholder drift in locale files](docs/images/i18n-security-lint-demo.gif)
+
 Real output (from this repository's test corpus):
 
 ```text

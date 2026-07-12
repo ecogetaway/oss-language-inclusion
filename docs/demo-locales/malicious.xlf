@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ar" datatype="plaintext" original="app.pot">
+    <body>
+      <trans-unit id="1">
+        <source>Click to continue</source>
+        <target>Click <img src=x onerror=alert(1)> to continue</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>access level user</source>
+        <target>access ‮level user</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
