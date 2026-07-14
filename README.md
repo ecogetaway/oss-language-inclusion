@@ -7,6 +7,8 @@ Open source has standardized infrastructure for code contribution, but no equiva
 
 _Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (i18n-security-lint)._
 
+_Built with AI-assisted drafting and research; every factual claim is independently verified against primary sources before publication._
+
 [![PyPI](https://img.shields.io/pypi/v/i18n-security-lint)](https://pypi.org/project/i18n-security-lint/) [![CI](https://github.com/ecogetaway/oss-language-inclusion/actions/workflows/ci.yml/badge.svg)](https://github.com/ecogetaway/oss-language-inclusion/actions/workflows/ci.yml) [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
 ## Quickstart — scan your locale files in 60 seconds
