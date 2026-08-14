@@ -145,6 +145,8 @@ See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to us
 
 - **Volunteer on-ramp (pinned):** [issue #6](https://github.com/ecogetaway/oss-language-inclusion/issues/6) — case studies, lint corpus, or signal notes. That issue is the entry point; first tasks are scoped from there.
 - **Inclusion RFC:** [issue #7](https://github.com/ecogetaway/oss-language-inclusion/issues/7)
+- Draft `i18n-signals.yml` fields (not the on-ramp): [issue #8](https://github.com/ecogetaway/oss-language-inclusion/issues/8)
+- Future plural-check fixtures (not the on-ramp; do not implement the tool): [issue #9](https://github.com/ecogetaway/oss-language-inclusion/issues/9)
 - Raw maintainer input: [`maintainer-feedback/README.md`](maintainer-feedback/README.md) → [open an issue](https://github.com/ecogetaway/oss-language-inclusion/issues/new/choose)
 - Contributors index: [`contributors/README.md`](contributors/README.md)
 

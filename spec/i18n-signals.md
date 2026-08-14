@@ -78,8 +78,8 @@ the same review problem. A project can accept one and decline the other.
 4. Named `github_handle` on `language_expertise`: useful, or too stale too
    fast? An honest empty list may be better than a handle that left the project.
 
-Comment on the companion GitHub issue (opened alongside this draft) rather than
-silently rewriting this file.
+Comment on [issue #8](https://github.com/ecogetaway/oss-language-inclusion/issues/8)
+rather than silently rewriting this file.
 
 ---
 

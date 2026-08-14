@@ -8,6 +8,8 @@ Intended scope: verify that a translation's plural forms match the CLDR plural r
 It will pair with [`../i18n-security-lint`](../i18n-security-lint/) (which is implemented) as a combined "i18n quality gate."
 
 **Before implementation:** collect a small failing corpus of real locale files
-(missing or extra plural categories). That fixtures work is a follow-up to the
-volunteer on-ramp ([issue #6](https://github.com/ecogetaway/oss-language-inclusion/issues/6)),
+(missing or extra plural categories). Track that work on
+[issue #9](https://github.com/ecogetaway/oss-language-inclusion/issues/9).
+It is a follow-up to the volunteer on-ramp
+([issue #6](https://github.com/ecogetaway/oss-language-inclusion/issues/6)),
 not a first task, and is **not** a request to write this checker.
