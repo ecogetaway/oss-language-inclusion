@@ -1,11 +1,18 @@
 # Open Source Language Inclusion
 *From evidence base to shippable i18n infrastructure.*
 
-Open source has standardized infrastructure for code contribution, but no equivalent infrastructure for language contribution. This repository explores language inclusion as a missing infrastructure layer in open source — and now converts that evidence into runnable tooling: a translated-string security linter and a CLDR plural-rule conformance checker that any project can drop into CI.
+Open source has standardized infrastructure for code contribution, but no equivalent infrastructure for language contribution. This repository studies that **language inclusion gap** with public case studies, then publishes the smallest reusable pieces the evidence supports.
+
+| Piece | Role | Status |
+| --- | --- | --- |
+| [`signals/`](signals/) | Synthesized research patterns (markdown) | Active |
+| [`spec/`](spec/) | Reusable specs — security checks, and a draft root declaration file | Security spec in use; [`i18n-signals.yml`](spec/i18n-signals.md) is a **v0.1 draft** |
+| [`tools/i18n-security-lint`](tools/i18n-security-lint/) | CI scan for defects in translated strings | **Shipping** |
+| [`tools/cldr-plural-check`](tools/cldr-plural-check/) | Plural-form completeness vs CLDR | **Planned — not implemented** |
 
 **Provenance.** Part of the **OSS Infrastructure Initiative** (Sanjay C. and Aniruddh Raghavendra) — an evidence-first portfolio applying one method across three under-served open source contribution domains: internationalization, accessibility, and AI contribution. First published April 2026. Full portfolio under [Companion Projects](#companion-projects) below.
 
-_Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (i18n-security-lint)._
+_Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (`i18n-security-lint`). A root `i18n-signals.yml` declaration is a provisional draft under `spec/`. The CLDR plural checker is planned, not shipping._
 
 _Built with AI-assisted drafting and research; every factual claim is independently verified against primary sources before publication._
 
@@ -55,11 +62,12 @@ Exit code 1 under `--strict`, so it drops straight into CI. Formats: JSON, gette
 
 Please do **not** ask people to star the repo. The useful signal is an install, a CI run, or a filed finding.
 
-Code contribution has mature shared workflows; language contribution often still depends on local process and maintainer capacity. This repository turns that gap into a runnable security check.
+Code contribution has mature shared workflows; language contribution often still depends on local process and maintainer capacity. The optional locale-file scanner above is one byproduct of that gap — not the whole project. For inclusion and review practice, start with [case studies](case-studies/), [problem-definition.md](problem-definition.md), and [RFC #7](https://github.com/ecogetaway/oss-language-inclusion/issues/7).
 
 ## Terminology used in this repo
 
-- **signals** = synthesized patterns
+- **signals** = synthesized research patterns in [`signals/`](signals/) (markdown)
+- **`i18n-signals.yml`** = a *draft* root declaration file other projects may adopt; specified under [`spec/`](spec/i18n-signals.md), not the markdown in `signals/`
 - **feedback** = raw input
 - **contributors** = people
 
@@ -96,26 +104,32 @@ No existing i18n specification — including W3C, GNU gettext documentation, or 
 - [`case-studies/openclaw.md`](case-studies/openclaw.md)
 - [`case-studies/contribution-evidence.md`](case-studies/contribution-evidence.md)
 - [`problem-definition.md`](problem-definition.md)
+- [RFC: do these OSS language-inclusion patterns match real l10n review practice?](https://github.com/ecogetaway/oss-language-inclusion/issues/7)
 
 ---
 ## Tools
 
-This repository is expanding from an evidence base into runnable infrastructure. Tooling lives under `tools/` as independently installable packages, each with its own README, tests, and a published GitHub Action.
+This repository is expanding from an evidence base into runnable infrastructure. Tooling lives under `tools/`. Only `i18n-security-lint` is implemented and installable today.
 
-##`tools/i18n-security-lint` — Translated-String Security Linter
+### `tools/i18n-security-lint` — Translated-String Security Linter
+
 A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) for the four vulnerability classes documented in [Security Scope](#security-scope):
 - Unicode bidirectional override attacks
 - Cross-site scripting (XSS) in rendered locale content
 - Format-specifier tampering
 - Interpolation-variable integrity failures
 
-Status: working scaffolding — all four checks implemented, with a test suite and CI (see `.github/workflows/ci.yml`) that runs the scanner against a corpus of malicious locale files on every push. This is the flagship security deliverable, demonstrated as required. Vulnerability reports: see [SECURITY.md](SECURITY.md).
----
-##`tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker (planned)
-Planned, not yet implemented: will verify that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular), pairing with the security linter as a combined "i18n quality gate."
+Status: **shipping** — all four checks implemented, with a test suite and CI (see `.github/workflows/ci.yml`) that runs the scanner against a corpus of malicious locale files on every push. Vulnerability reports: see [SECURITY.md](SECURITY.md).
+
+### `tools/cldr-plural-check` — CLDR Plural-Rule Conformance Checker (planned)
+
+**Planned, not implemented.** Intended to verify that a translation's plural forms match the CLDR rules for its language (e.g., Arabic's six forms, Hindi's zero-inclusive singular). It would pair with the security linter as a combined i18n quality gate. Do not treat this directory as a shipping tool.
 
 Both tools are designed to be extracted into their own repositories later if an organization or adopter requests it.
----
+
+### Draft spec — `i18n-signals.yml`
+
+A provisional root-file spec so a project can declare whether it is ready to review language work (formats, expertise, readiness). Human write-up and examples: [`spec/i18n-signals.md`](spec/i18n-signals.md). No validator, badge, or GitHub Action yet.
 
 ## Signals from the Ecosystem
 
@@ -129,6 +143,8 @@ Both tools are designed to be extracted into their own repositories later if an 
 
 See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to use templates, and how listing in [`contributors/README.md`](contributors/README.md) works (opt-in only).
 
+- **Volunteer on-ramp (pinned):** [issue #6](https://github.com/ecogetaway/oss-language-inclusion/issues/6) — case studies, lint corpus, or signal notes. That issue is the entry point; first tasks are scoped from there.
+- **Inclusion RFC:** [issue #7](https://github.com/ecogetaway/oss-language-inclusion/issues/7)
 - Raw maintainer input: [`maintainer-feedback/README.md`](maintainer-feedback/README.md) → [open an issue](https://github.com/ecogetaway/oss-language-inclusion/issues/new/choose)
 - Contributors index: [`contributors/README.md`](contributors/README.md)
 
@@ -144,10 +160,12 @@ oss-language-inclusion/
 ├── problem-definition.md
 ├── roadmap.md
 ├── tools/
-│   ├── i18n-security-lint/
-│   ├── cldr-plural-check/
-│   └── docs/
+│   ├── i18n-security-lint/      # shipping
+│   └── cldr-plural-check/       # planned
 ├── spec/
+│   ├── translated-string-security-checks.md
+│   ├── i18n-signals.md          # draft declaration spec
+│   └── examples/
 ├── case-studies/
 ├── signals/
 ├── maintainer-feedback/
@@ -172,7 +190,7 @@ Three repositories, one method: document how a contribution domain actually fail
 
 | Domain | Repository | What it builds | Maturity |
 | --- | --- | --- | --- |
-| Internationalization | [oss-language-inclusion](https://github.com/ecogetaway/oss-language-inclusion) | Translated-string contribution evidence + `i18n-security-lint` CI tooling | Most developed; method published in CACM Blog and DevOps.com |
+| Internationalization | [oss-language-inclusion](https://github.com/ecogetaway/oss-language-inclusion) | Language-inclusion evidence, shipping `i18n-security-lint`, draft `i18n-signals.yml` spec | Most developed; method published in CACM Blog and DevOps.com |
 | Accessibility | [oss-accessibility-inclusion](https://github.com/ecogetaway/oss-accessibility-inclusion) | How accessibility PRs are reviewed; review rubric + draft `a11y-signals.yml` | Active |
 | AI contribution | [oss-ai-contribution-policy](https://github.com/ecogetaway/oss-ai-contribution-policy) | Machine-readable `ai-contribution-policy.yml` standard (verification over detection) | Early evidence-gathering |
 
@@ -189,4 +207,5 @@ Case studies documented with upstream PR/issue links across Open WebUI, Kilocode
 -Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
 -Project website: ossinfrainitiative.netlify.app
 -Licensed under Apache 2.0.
-- Tooling scaffolded under `tools/` (i18n-security-lint, cldr-plural-check); `spec/` and `docs/` added.
+- `i18n-security-lint` is shipping (PyPI + GitHub Action). `cldr-plural-check` remains a planned placeholder, not a shipping tool.
+- Draft spec for a root `i18n-signals.yml` declaration lives under [`spec/i18n-signals.md`](spec/i18n-signals.md) (provisional v0.1; no validator yet).

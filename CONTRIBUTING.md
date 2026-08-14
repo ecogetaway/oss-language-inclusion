@@ -6,6 +6,7 @@
 - **Factual correction or question** (case study text, links, or scope): use **Correction, question, or general note** and cite the file or URL.
 - **Add your name to** [`contributors/README.md`](contributors/README.md): open an issue asking to be listed, **only** if you **explicitly** consent to the exact wording. This repository does not add names without opt-in.
 - **Changes to** [`signals/`](signals/): open an issue describing the change and why. Signals are **synthesized** from evidence and input; not every suggestion becomes a doc edit.
+- **Changes to** the draft [`spec/i18n-signals.md`](spec/i18n-signals.md) field set: open an issue first. Do not treat the draft as frozen, and do not add a validator or badge without an issue.
 
 **Do not** add unverifiable claims about upstream projects—include links to issues, PRs, or commits when discussing them.
 

@@ -1,0 +1,23 @@
+# Illustrative — documentation translations welcome; product UI strings are frozen.
+schema_version: "0.1"
+
+project:
+  name: "example/docs-site"
+  repo_url: "https://github.com/example/docs-site"
+
+review_readiness: accepting_new_locales
+
+language_expertise: []
+
+preferred_format: docs
+
+standards_compliance: none-declared
+
+scope:
+  - docs
+
+last_reviewed: "2026-08-14"
+
+notes: >
+  Documentation locales (Docusaurus / Sphinx / MkDocs or similar) are in scope.
+  Application UI string files are not.
