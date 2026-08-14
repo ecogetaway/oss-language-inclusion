@@ -1,0 +1,24 @@
+# Illustrative — a JS app with in-repo JSON locales, not taking new languages yet.
+schema_version: "0.1"
+
+project:
+  name: "example/js-app"
+  repo_url: "https://github.com/example/js-app"
+
+review_readiness: accepting_fixes_only
+
+language_expertise:
+  - locale: "en"
+
+preferred_format: json
+
+standards_compliance: none-declared
+
+scope:
+  - ui
+
+last_reviewed: "2026-08-14"
+
+notes: >
+  New locale files are deferred until review capacity exists.
+  Fixes to existing keys in supported locales are welcome.

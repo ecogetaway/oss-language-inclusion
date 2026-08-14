@@ -1,0 +1,30 @@
+# Honest self-file for ecogetaway/oss-language-inclusion.
+# This is a research repository, not a product that ships UI locales.
+schema_version: "0.1"
+
+project:
+  name: "ecogetaway/oss-language-inclusion"
+  repo_url: "https://github.com/ecogetaway/oss-language-inclusion"
+
+# We review evidence (case studies, lint fixtures, public feedback).
+# We do not review product locale expansions for an application of our own.
+review_readiness: not_ready
+
+# No named language reviewers on staff. Empty is the honest signal.
+language_expertise: []
+
+# Demo / test locales in this repo use several formats; JSON is the common one.
+preferred_format: json
+
+standards_compliance: none-declared
+
+scope:
+  - docs
+
+last_reviewed: "2026-08-14"
+
+notes: >
+  i18n-security-lint is implemented and runs in CI.
+  cldr-plural-check is planned and not implemented.
+  Language-inclusion contributions (case studies, fixtures) go through
+  GitHub issues — start at issue #6 — not through this file.

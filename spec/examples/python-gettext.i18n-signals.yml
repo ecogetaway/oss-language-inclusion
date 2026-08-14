@@ -1,0 +1,23 @@
+# Illustrative — a Python project that takes gettext catalogs.
+schema_version: "0.1"
+
+project:
+  name: "example/python-app"
+  repo_url: "https://github.com/example/python-app"
+
+review_readiness: accepting_new_locales
+
+language_expertise:
+  - locale: "es"
+    github_handle: "example-maintainer"
+  - locale: "fr"
+
+preferred_format: po
+
+standards_compliance: gettext
+
+scope:
+  - ui
+  - docs
+
+last_reviewed: "2026-08-14"
