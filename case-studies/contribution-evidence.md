@@ -13,7 +13,7 @@ Star counts and check states **change over time**; each item links to the canoni
 | **Open WebUI** | [PR #23745](https://github.com/open-webui/open-webui/pull/23745) | Merged 2026-04-15 to `dev` | Same PR governance as code; locale hygiene still must pass project checks |
 | **Kilocode** (`Kilo-Org/kilocode`) | [PR #8377](https://github.com/Kilo-Org/kilocode/pull/8377) | Open; automated “Kilo Code Review” check **success**; not merged | Human maintainer merge; cross-package scope |
 | **Hoppscotch** | [PR #6025](https://github.com/hoppscotch/hoppscotch/pull/6025) | Open; under maintainer/bot review | Coverage vs `en.json`, review thread length, high-traffic repo (~79k stars when drafted) |
-| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | Open proposal | Maintainer workflow preference (PR vs platform) unset before work lands |
+| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | Closed — resolved 2026-06-04 by merged maintainer PR #22914 (8 locales incl. Hindi) | Proposal never routed to a PR; maintainer implemented directly 
 | **OpenClaw** | [Issue #3460](https://github.com/openclaw/openclaw/issues/3460) | Closed (not planned), locked | Maintainer-stated **i18n bandwidth** + architecture readiness; consolidation policy |
 
 ---
