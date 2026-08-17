@@ -52,12 +52,13 @@ Star counts and check states **change over time**; each item links to the canoni
 
 ## 4. NousResearch / Hermes Agent — [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763)
 
-**Status:** **Open** (proposal to add Hindi documentation locale via Docusaurus scaffolding and incremental page translation).
+**Status:** **Closed** — resolved **2026-06-04** by merged maintainer [PR #22914](https://github.com/NousResearch/hermes-agent/pull/22914), which added 8 documentation locales including Hindi. The proposal was not routed through a contributor PR; the maintainer implemented it directly.
 
 - **Insight:** **Docs i18n** is often a **separate decision surface** from app UI strings—maintainers must answer workflow questions (direct PR vs platform, ownership, staleness) **before** the first merge.
-- **Insight:** The issue explicitly asks for **maintainer preference on process**—a sign that **infrastructure and policy** precede the first translated paragraph.
-- **Insight:** Treating this as an **issue-first** proposal (not only a drive-by PR) reflects respect for maintainer load; it also means **latency** until priorities align.
+- **Insight:** The issue explicitly asked for **maintainer preference on process**. That question was never answered; the maintainer implemented the locales directly instead—so **infrastructure and policy** were settled unilaterally rather than negotiated with the contributor.
+- **Insight:** Treating this as an **issue-first** proposal (not only a drive-by PR) reflects respect for maintainer load, but it also means **latency**—and here the latency ended not through alignment with the contributor, but through the maintainer doing the work themselves roughly two months later. Issue-first defers to maintainer capacity; it does not secure a contribution path.
 
+**Verification:** Originally recorded as an open proposal. Re-checked 2026-08-17: the issue was closed 2026-06-04, resolved upstream by a merged maintainer PR. Section corrected accordingly.
 ---
 
 ## 5. OpenClaw — [Issue #3460](https://github.com/openclaw/openclaw/issues/3460)
@@ -75,7 +76,7 @@ Star counts and check states **change over time**; each item links to the canoni
 Across these references—**merged**, **open-and-reviewed**, **open-awaiting-merge**, **open-policy-discussion**, and **closed-for-capacity**—a stable pattern appears:
 
 1. **Community intent exists** (fixes, new locale files, doc locale proposals, thread offers).
-2. **Project outcomes diverge** based on **reviewer time**, **automation**, **repository policy**, and **architectural readiness**—not based on whether Hindi is a “reasonable” language to support.
+2. **Project outcomes diverge** based on **reviewer time**, **automation**, **repository policy**,****closed-resolved-upstream** **, and **architectural readiness**—not based on whether Hindi is a “reasonable” language to support.
 3. **There is no single shared upstream** that equalizes these outcomes; each project **re-derives** intake, quality bars, and sustainability.
 
 **Categories spanned:** the table above includes **AI-adjacent application UIs** (Open WebUI, OpenClaw), **multi-package developer tooling** (Kilocode), **API / client developer tools** (Hoppscotch), and **documentation sites** (Hermes Agent). **Early evidence suggests** the friction pattern is **not confined to one stack or vertical**—it may be **ecosystem-wide**, even though each project’s risk model and staffing differ.
