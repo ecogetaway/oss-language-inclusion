@@ -1,4 +1,4 @@
-"""Coverage for the remaining check/format combinations beyond test_bidi.py:
+"""Coverage for the remaining check/format combinations beyond test_scanners.py:
 interpolation-variable drift, XLIFF and Fluent extraction, and CLI exit codes."""
 import json
 import sys
@@ -15,9 +15,10 @@ CORPUS = Path(__file__).parent / "corpus"
 
 def test_interpolation_variable_drift_in_po():
     # {userName} renamed to {user_name} in the translation must be flagged.
+    # Reported as INTERPOLATION_DRIFT, distinct from format-specifier drift.
     entries = list(extract(CORPUS / "interpolation.po"))
     drift = [f for e in entries for f in compare_placeholders(e.source, e.value)]
-    assert any(f.rule == "PLACEHOLDER_DRIFT" for f in drift)
+    assert any(f.rule == "INTERPOLATION_DRIFT" for f in drift)
 
 
 def test_matching_interpolation_variables_pass():
@@ -87,3 +88,29 @@ def test_extract_locations_are_distinct_per_entry():
     for name in ("malicious.xlf", "malicious.ftl"):
         locations = [e.location for e in extract(CORPUS / name)]
         assert len(locations) == len(set(locations)), f"{name}: duplicate locations"
+
+
+def test_directory_argument_scans_files_inside(tmp_path):
+    # Regression: a bare directory matched no files, so `i18n-security-lint
+    # locale/` -- the documented primary usage and the Action's default --
+    # reported PASS and exited 0 without reading anything.
+    locales = tmp_path / "locales"
+    locales.mkdir()
+    (locales / "hi.json").write_text(
+        '{"greeting": "Hello <script>alert(1)</script>"}', encoding="utf-8"
+    )
+    assert main(["--strict", str(locales)]) == 1
+
+
+def test_directory_argument_ignores_unsupported_files(tmp_path):
+    locales = tmp_path / "locales"
+    locales.mkdir()
+    (locales / "README.md") .write_text("<script>not a locale</script>", encoding="utf-8")
+    assert main(["--strict", str(locales)]) == 0
+
+
+def test_nested_directories_are_walked(tmp_path):
+    nested = tmp_path / "locales" / "hi" / "LC_MESSAGES"
+    nested.mkdir(parents=True)
+    (nested / "app.json").write_text('{"k": "Hello <iframe>"}', encoding="utf-8")
+    assert main(["--strict", str(tmp_path / "locales")]) == 1

@@ -1,6 +1,9 @@
 {
   "greeting": "Hello <script>alert(1)</script>",
   "direction": "Right‪to‫left",
+  "invoice": "Amount: 1000‮ USD",
+  "receipt": "Paid ‫500‬ rupees",
+  "stray_pop": "Trailing⁩pop",
   "welcome": "Welcome %s to the app",
   "farewell": "Goodbye, friend"
 }

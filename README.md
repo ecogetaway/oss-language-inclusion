@@ -36,10 +36,11 @@ FAIL: translated-string security defects found:
    malicious.xlf:7
      [HIGH] XSS_PAYLOAD: Possible XSS payload fragment: <img
    malicious.xlf:11
-     [HIGH] BIDI_OVERRIDE: Unicode bidirectional control character U+202E detected
+     [HIGH] BIDI_OVERRIDE: Bidirectional override U+202E (RLO): displayed text can differ from file content
+     [HIGH] BIDI_UNBALANCED: 1 unterminated embedding/override: needs U+202C (PDF); direction leaks into surrounding text
 == interpolation.po
-   interpolation.po:'Hello {userName}…'
-     [MEDIUM] PLACEHOLDER_DRIFT: source=['{count}', '{userName}'] translation=['{count}', '{user_name}']
+   interpolation.po:'Hello {userName}, you have {co'
+     [MEDIUM] INTERPOLATION_DRIFT: Interpolation variable set mismatch: source=['{count}', '{userName}'] translation=['{count}', '{user_name}']
 ```
 
 Exit code 1 under `--strict`, so it drops straight into CI. Formats: JSON, gettext `.po`, XLIFF, Fluent. Details: [`tools/i18n-security-lint`](tools/i18n-security-lint/).
@@ -93,11 +94,12 @@ Code contribution has mature shared workflows; language contribution often still
 ## Security Scope
 Translated strings in open source software represent an under-recognized attack surface. Unlike code contributions, which pass through linters, static analysis, and CI pipelines, translated strings typically enter a codebase with no automated or standardized security review.
 This repository documents four vulnerability classes introduced through unreviewed translated strings:
-Unicode Bidirectional Override Attacks — Right-to-left control characters (U+202A–U+202E, U+2066–U+2069) can cause displayed text to differ from actual file content. In software used in legal, financial, or civic contexts, this creates a meaningful integrity risk.
+Bidirectional Control Misuse — Direction overrides (U+202D, U+202E) can cause displayed text to differ from actual file content, and controls left unterminated leak direction into surrounding UI. In software used in legal, financial, or civic contexts, this creates a meaningful integrity risk. Balanced isolates (U+2066–U+2069) are the mechanism Unicode and W3C recommend, and are treated here as correct usage rather than as a defect.
 Cross-Site Scripting (XSS) — HTML tags or JavaScript fragments embedded in translated strings can execute in web contexts where locale content is rendered without sanitization.
-Format String Vulnerabilities — Translators may inadvertently add, remove, or rename format specifiers such as %s, {0}, or {{variable}}, causing crashes or undefined behaviour at runtime.
-Interpolation Variable Integrity Failures — Variable names renamed or omitted during translation break string interpolation, with consequences ranging from empty UI strings to application crashes.
-No existing i18n specification — including W3C, GNU gettext documentation, or ICU MessageFormat 2.0 — currently includes a standardized security checklist for translated strings. A primary deliverable of this project is to produce that checklist as a freely reusable, openly licensed artifact.
+Format String Vulnerabilities — Translators may inadvertently add, remove, or retype format specifiers such as %s or %(count)s, causing crashes or undefined behaviour at runtime.
+Interpolation Variable Integrity Failures — Interpolation variables such as {0}, {name}, or {{var}} renamed or omitted during translation break string interpolation, with consequences ranging from empty UI strings to application crashes.
+
+Unicode [UTS #55, Source Code Handling](https://www.unicode.org/reports/tr55/) addresses bidirectional ordering spoofs, confusables, and line-break spoofs in **source code**. The adjacent surface — **locale resource files**, reviewed as translation artifacts rather than as code — has no equivalent security review checklist: the formats that carry them (GNU gettext, ICU MessageFormat 2.0, XLIFF) specify message syntax, not review criteria. A primary deliverable of this project is to produce that checklist as a freely reusable, openly licensed artifact. See [`spec/translated-string-security-checks.md`](spec/translated-string-security-checks.md).
 
 ## Evidence
 
@@ -114,7 +116,7 @@ This repository is expanding from an evidence base into runnable infrastructure.
 ### `tools/i18n-security-lint` — Translated-String Security Linter
 
 A CLI and CI action that scans locale files (`.json`, `.po`, `.xliff`, Fluent) for the four vulnerability classes documented in [Security Scope](#security-scope):
-- Unicode bidirectional override attacks
+- Bidirectional control misuse (overrides, unterminated controls)
 - Cross-site scripting (XSS) in rendered locale content
 - Format-specifier tampering
 - Interpolation-variable integrity failures
