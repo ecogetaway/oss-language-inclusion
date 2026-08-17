@@ -207,7 +207,7 @@ Case studies documented with upstream PR/issue links across Open WebUI, Kilocode
 -Maintainer feedback and contributors now separated from signals.
 -Article published: "Open Source's Hidden Language Gap," CACM Blog, May 2026.
 -Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
--Project website: ossinfrainitiative.netlify.app
+-Project website:[ ossinfrainitiative.netlify.app](https://oss-infrastructure-initiative.netlify.app/)
 -Licensed under Apache 2.0.
 - `i18n-security-lint` is shipping (PyPI + GitHub Action). `cldr-plural-check` remains a planned placeholder, not a shipping tool.
 - Draft spec for a root `i18n-signals.yml` declaration lives under [`spec/i18n-signals.md`](spec/i18n-signals.md) (provisional v0.1; no validator yet).
