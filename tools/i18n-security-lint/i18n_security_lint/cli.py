@@ -11,6 +11,33 @@ from .extract import extract
 from .scanners import Finding, compare_placeholders, scan_bidi, scan_xss
 
 
+# Extensions extract() knows how to read. Used to pick files out of a directory
+# without pulling in READMEs, images, or anything else living beside the locales.
+SUPPORTED_SUFFIXES = {".json", ".po", ".xliff", ".xlf", ".ftl"}
+
+
+def _collect(pattern: str) -> List[Path]:
+    """Resolve one CLI argument into scannable files.
+
+    A directory is walked recursively. Passing one used to match nothing and
+    exit 0, so the documented `i18n-security-lint locale/` reported a clean
+    scan without reading a single file.
+    """
+    matches = [Path(p) for p in glob.glob(pattern, recursive=True)] or [Path(pattern)]
+
+    files: List[Path] = []
+    for m in matches:
+        if m.is_dir():
+            files.extend(
+                p
+                for p in sorted(m.rglob("*"))
+                if p.is_file() and p.suffix.lower() in SUPPORTED_SUFFIXES
+            )
+        elif m.is_file():
+            files.append(m)
+    return files
+
+
 def _scan_file(path: Path) -> Dict[str, List[Finding]]:
     results: Dict[str, List[Finding]] = {}
     for entry in extract(path):
@@ -40,10 +67,12 @@ def main(argv=None) -> int:
     args = parser.parse_args(argv)
 
     files: List[Path] = []
+    seen = set()
     for pattern in args.paths:
-        matches = [Path(p) for p in glob.glob(pattern, recursive=True)]
-        files.extend(matches if matches else [Path(pattern)])
-    files = [f for f in files if f.exists() and f.is_file()]
+        for f in _collect(pattern):
+            if f not in seen:
+                seen.add(f)
+                files.append(f)
 
     total: Dict[str, Dict[str, List[Finding]]] = {}
     finding_count = 0

@@ -43,6 +43,15 @@ jobs:
               exit 1
             fi
           done
-      - name: Scanner must pass the clean corpus file
+      - name: Scanner must pass every known-good corpus file
         working-directory: tools/i18n-security-lint/tests/corpus
-        run: i18n-security-lint --strict clean.json
+        # bidi-safe.json holds balanced isolates — the mechanism Unicode and W3C
+        # recommend. Reporting it would be a false positive, so it is enforced
+        # here as well as in the test suite.
+        run: |
+          for f in clean.json bidi-safe.json; do
+            if ! i18n-security-lint --strict "$f"; then
+              echo "::error::scanner reported a false positive on known-good file: $f"
+              exit 1
+            fi
+          done

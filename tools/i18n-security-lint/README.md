@@ -6,15 +6,21 @@ introduced through unreviewed translated strings.
 It checks the four vulnerability classes documented in the parent repository's
 [Security Scope](https://github.com/ecogetaway/oss-language-inclusion#security-scope):
 
-1. **Unicode bidirectional override attacks** — Right-to-left control characters
-   (`U+202A`–`U+202E`, `U+2066`–`U+2069`) that make displayed text differ from
-   actual file content.
+1. **Bidirectional control misuse** — overrides (`U+202D`, `U+202E`) that make
+   displayed text differ from actual file content, and controls left
+   unterminated so they leak direction into surrounding UI. Balanced isolates
+   (`U+2066`–`U+2069`) are the mechanism Unicode and W3C recommend and are
+   **not** reported.
 2. **Cross-site scripting (XSS) in rendered locale content** — HTML/script
    fragments embedded in translated strings.
-3. **Format-specifier tampering** — added, removed, or renamed placeholders
-   (`%s`, `{0}`, `{{variable}}`) that cause crashes or undefined behaviour.
-4. **Interpolation-variable integrity failures** — variable names renamed or
-   omitted during translation, breaking string interpolation.
+3. **Format-specifier tampering** — printf-family specifiers (`%s`, `%d`,
+   `%1$d`, `%(name)s`) added, removed, or retyped during translation.
+4. **Interpolation-variable integrity failures** — brace- and template-style
+   variables (`{0}`, `{name}`, `{{var}}`, `$t(key)`) renamed or omitted,
+   breaking string interpolation.
+
+Full rule ids, severities, and detection methods are specified in
+[`spec/translated-string-security-checks.md`](../../spec/translated-string-security-checks.md).
 
 ## Supported formats
 
@@ -60,13 +66,20 @@ so the tool drops straight into a CI pipeline.
 
 ## Status
 
-Working scaffolding. All four checks are implemented: bidi and XSS for every
+v0.2. All four checks are implemented: bidi and XSS for every
 supported format, format-specifier and interpolation-variable drift for `.po`
 source/translation pairs. The test suite covers each check across JSON, gettext,
 XLIFF, and Fluent corpus files, and the repository's CI dogfoods the scanner
 against the malicious corpus on every push (it must flag every malicious file
 and pass the clean one). This is the flagship security deliverable of the Open
 Source Language Inclusion initiative, demonstrated as required.
+
+**Breaking change in v0.2:** rule ids changed. `BIDI_OVERRIDE` now fires only on
+true overrides (`U+202D`/`U+202E`), with `BIDI_UNBALANCED` and
+`BIDI_DEPRECATED_EMBEDDING` covering the other cases; `PLACEHOLDER_DRIFT` is
+replaced by `FORMAT_SPECIFIER_DRIFT` and `INTERPOLATION_DRIFT`. Update any CI
+configuration that filters on rule ids. Migration table in the
+[spec](../../spec/translated-string-security-checks.md).
 
 Known limitations: detection is pattern-based, not parser-accurate — see the
 repository's [SECURITY.md](../../SECURITY.md) for scope and how to report
