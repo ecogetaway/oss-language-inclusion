@@ -11,9 +11,9 @@ Star counts and check states **change over time**; each item links to the canoni
 | Project | Reference | Status (at documentation time) | Key constraint (from public record) |
 | -------- | --------- | -------------------------------- | ------------------------------------ |
 | **Open WebUI** | [PR #23745](https://github.com/open-webui/open-webui/pull/23745) | Merged 2026-04-15 to `dev` | Same PR governance as code; locale hygiene still must pass project checks |
-| **Kilocode** (`Kilo-Org/kilocode`) | [PR #8377](https://github.com/Kilo-Org/kilocode/pull/8377) | Open; automated “Kilo Code Review” check **success**; not merged | Human maintainer merge; cross-package scope |
+| **Kilocode** (`Kilo-Org/kilocode`) | [PR #8377](https://github.com/Kilo-Org/kilocode/pull/8377) | Closed unmerged 2026-06-05; bot check had passed | Target paths were deleted while the PR waited; rework invited |
 | **Hoppscotch** | [PR #6025](https://github.com/hoppscotch/hoppscotch/pull/6025) | Open; under maintainer/bot review | Coverage vs `en.json`, review thread length, high-traffic repo (~79k stars when drafted) |
-| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | Closed — resolved 2026-06-04 by merged maintainer PR #22914 (8 locales incl. Hindi) | Proposal never routed to a PR; maintainer implemented directly 
+| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | **Still open**; declared resolved in a comment 2026-06-04 after PR #22914 merged 2026-05-10 | Proposal never routed to a PR; maintainer implemented directly 
 | **OpenClaw** | [Issue #3460](https://github.com/openclaw/openclaw/issues/3460) | Closed (not planned), locked | Maintainer-stated **i18n bandwidth** + architecture readiness; consolidation policy |
 
 ---
@@ -32,11 +32,14 @@ Star counts and check states **change over time**; each item links to the canoni
 
 **Repository path:** `Kilo-Org/kilocode` (this is where the PR lives on GitHub.)
 
-**Status:** **Open** at last check; **not merged**. GitHub Actions include a **“Kilo Code Review”** check reported as **success**; other listed checks were **skipped** on the sampled commit. **Human maintainer merge** is therefore still the gating step.
+**Status:** **Closed without merge** on **2026-06-05** by maintainer `@johnnyeric`. Opened 2026-04-05 (9 files, 4 commits); the **“Kilo Code Review”** bot check had passed. It was **not** closed on quality grounds: during the two months the PR sat open, the paths it targeted (`packages/app`, `packages/desktop-electron`) were **removed from the repository**. The maintainer explicitly invited a reworked PR against current `main`.
 
-- **Insight:** **Automation can clear a bar** (style/bot review) while **merge authority** remains concentrated on maintainers—fine for risk control, but it lengthens the **wall-clock** for language access unless i18n has dedicated reviewer capacity.
-- **Insight:** Hindi here spans **multiple packages** in one PR—cross-cutting i18n touches **more files and more reviewers’ mental models** than a single-locale JSON tweak in one app.
-- **Insight:** This sits in the middle of the spectrum: **neither rejected nor shipped**—a common state that is easy to under-count when success is measured only by merged PRs.
+- **Insight:** The maintainer stated the gap **on the record** — that the project has no structured workflow for i18n contributions beyond normal PR review, and that language review therefore [“does depend on contributor/maintainer bandwidth right now”](https://github.com/Kilo-Org/kilocode/pull/8377#issuecomment-4631698167). This is a maintainer describing the infrastructure gap in their own words, unprompted by any framing from this repository.
+- **Insight:** **Review latency has an architectural cost.** The delay did not merely postpone the contribution — it **invalidated** it. Code moved beneath the PR, and a locale change that was correct in April targeted deleted directories by June. For language contributions specifically, waiting is not neutral: the target drifts.
+- **Insight:** Hindi here spanned **multiple packages** in one PR — cross-cutting i18n touches more files and more reviewers’ mental models than a single-locale JSON tweak, which widens the surface exposed to that drift.
+- **Insight:** This is **not a rejection**, and “merged vs rejected” has no category for it. The invitation to rework still stands. The accurate state is **expired** — a state invisible to any metric that counts only merges and closures-as-refusals.
+
+**Verification:** Originally recorded 2026-04 as “open; not merged.” Re-checked **2026-08-24** against the GitHub API: `state: closed`, `merged: false`, `closed_at: 2026-06-05`. Section corrected accordingly.
 
 ---
 
@@ -52,13 +55,15 @@ Star counts and check states **change over time**; each item links to the canoni
 
 ## 4. NousResearch / Hermes Agent — [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763)
 
-**Status:** **Closed** — resolved **2026-06-04** by merged maintainer [PR #22914](https://github.com/NousResearch/hermes-agent/pull/22914), which added 8 documentation locales including Hindi. The proposal was not routed through a contributor PR; the maintainer implemented it directly.
+**Status:** **Still open** as of 2026-08-24. The underlying request was satisfied upstream by maintainer [PR #22914](https://github.com/NousResearch/hermes-agent/pull/22914), **merged 2026-05-10**, which added 8 documentation locales including Hindi. A maintainer then commented on **2026-06-04** that the issue was being closed as resolved — but **did not actually close it**, and it remains open. The proposal was never routed through a contributor PR; the maintainer implemented it directly.
 
 - **Insight:** **Docs i18n** is often a **separate decision surface** from app UI strings—maintainers must answer workflow questions (direct PR vs platform, ownership, staleness) **before** the first merge.
 - **Insight:** The issue explicitly asked for **maintainer preference on process**. That question was never answered; the maintainer implemented the locales directly instead—so **infrastructure and policy** were settled unilaterally rather than negotiated with the contributor.
 - **Insight:** Treating this as an **issue-first** proposal (not only a drive-by PR) reflects respect for maintainer load, but it also means **latency**—and here the latency ended not through alignment with the contributor, but through the maintainer doing the work themselves roughly two months later. Issue-first defers to maintainer capacity; it does not secure a contribution path.
 
-**Verification:** Originally recorded as an open proposal. Re-checked 2026-08-17: the issue was closed 2026-06-04, resolved upstream by a merged maintainer PR. Section corrected accordingly.
+- **Insight:** **Declared closure and actual closure diverged.** A maintainer announced the issue was resolved and closed; the tracker still shows it open nearly three months later. Anyone auditing this project's i18n backlog by issue state would double-count it — a small illustration of why locale-request state is hard to measure across projects, and why contributors cannot reliably tell whether their request is live.
+
+**Verification:** Originally recorded as an open proposal; a 2026-08-17 pass wrongly recorded it as “closed 2026-06-04.” Re-checked against the GitHub API on **2026-08-24**: the issue is `state: open` with `closed_at: null`; PR #22914 merged **2026-05-10**, not 06-04 (that was the date of the maintainer's comment). Both errors corrected.
 ---
 
 ## 5. OpenClaw — [Issue #3460](https://github.com/openclaw/openclaw/issues/3460)
@@ -73,7 +78,7 @@ Star counts and check states **change over time**; each item links to the canoni
 
 ## Cross-Project Pattern
 
-Across these references—**merged**, **open-and-reviewed**, **open-awaiting-merge**, **open-policy-discussion**, and **closed-for-capacity**—a stable pattern appears:
+Across these references—**merged**, **open-and-reviewed**, **closed-because-the-target-moved**, **resolved-upstream-without-the-contributor**, and **closed-for-capacity**—a stable pattern appears:
 
 1. **Community intent exists** (fixes, new locale files, doc locale proposals, thread offers).
 2. **Project outcomes diverge** based on **reviewer time**, **automation**, **repository policy**,****closed-resolved-upstream** **, and **architectural readiness**—not based on whether Hindi is a “reasonable” language to support.
