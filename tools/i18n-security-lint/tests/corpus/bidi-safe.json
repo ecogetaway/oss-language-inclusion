@@ -1,0 +1,7 @@
+{
+  "_comment": "Balanced isolates and balanced embeddings. Must produce no high-severity findings.",
+  "mention": "Reply to ⁦user@example.com⁩ today",
+  "filename_unknown_dir": "Opening ⁨ملف.txt⁩ now",
+  "rtl_name": "Contact ⁧محمد⁩ for access",
+  "plain": "No bidi controls at all"
+}
