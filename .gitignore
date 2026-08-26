@@ -6,3 +6,16 @@ __pycache__/
 .venv/
 tools/**/.venv/
 .DS_Store
+
+# --- working documents: never publish (managed) ---
+# Engagement/outreach plans, funding proposals, cover notes and unpublished
+# article drafts stay on disk but must never reach this public repo.
+# If one ever truly belongs here: git add -f <path>
+.DS_Store
+~$*
+*.docx
+*.doc
+**/outreach/
+*ngagement-Plan*
+*ngagement-plan*
+/A11y/
