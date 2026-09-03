@@ -56,7 +56,7 @@ Exit code 1 under `--strict`, so it drops straight into CI. Formats: JSON, gette
 **GitHub Action (copy-paste):**
 
 ```yaml
-- uses: ecogetaway/oss-language-inclusion/tools/i18n-security-lint@main
+- uses: ecogetaway/oss-language-inclusion/tools/i18n-security-lint@v0.2.1
   with:
     path: locales/
 ```

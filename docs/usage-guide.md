@@ -102,7 +102,7 @@ jobs:
 Or use the bundled action directly:
 
 ```yaml
-- uses: ecogetaway/oss-language-inclusion/tools/i18n-security-lint@main
+- uses: ecogetaway/oss-language-inclusion/tools/i18n-security-lint@v0.2.1
   with:
     path: "locale/"
     strict: "true"
