@@ -21,6 +21,7 @@ tools/**/.venv/
 ~$*
 *.docx
 *.doc
+*.pdf
 **/outreach/
 *ngagement-Plan*
 *ngagement-plan*
