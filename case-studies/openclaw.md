@@ -55,19 +55,24 @@ The **April 2026** closure comment (public record) states **architectural change
 
 ### PR #42089 — Multilingual Mobile Localization Attempt
 
-A contributor implemented full multilingual support across iOS and Android, including Chinese (Simplified/Traditional) and Japanese, with UI coverage and testing.
+_Status as of 25 September 2026, verified against the GitHub record; corrections are logged in [CORRECTIONS.md](../CORRECTIONS.md)._
+
+A contributor proposed Japanese and Chinese (Simplified and Traditional) localization for the iOS and Android apps, including a localization pass over the iOS settings screen (11 files, +967/−686).
 
 **Outcome:**
-The PR was closed without merge and redirected to the canonical i18n issue (#3460).
+Closed without merge on 2026-04-26 by the project's automation, as superseded by the canonical i18n issue (#3460).
 
-**Maintainer / system signal:**
+**Signals on the record:**
+
+- Automated reviewers flagged problems before merge. Greptile rated it 2/5: "Not safe to merge as-is — two logic bugs and a missing locale declaration." Codex flagged the same regressions (a changed status message and a removed spinner), the missing `zh-Hant` declaration, and unrelated `.secrets.baseline` changes. One CI job failed.
+- The automated closing comment cited #3460's maintainer policy:
 
 > "translation PRs are being consolidated/closed until the i18n architecture is ready"
 
-> "Future native i18n should wait for a maintainer-requested path"
+  It also noted "unresolved review findings and unrelated `.secrets.baseline` churn", and said future native localization "should wait for a maintainer-requested i18n path".
 
 **Insight:**
-Even large, technically complete localization contributions are not accepted without a predefined i18n architecture and maintainer-led workflow.
+The pull request was blocked on two counts: the project's policy of consolidating translation work until its i18n architecture is ready, and unresolved technical findings. It is not an example of a technically complete contribution refused on policy alone. What it does show is that when a project pauses translation intake, the pause is stated in a canonical issue and applied by automation. That is clear, but a contributor may learn of it only after doing the work.
 ----
 
 ## Key insight

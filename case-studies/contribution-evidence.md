@@ -13,7 +13,7 @@ Star counts and check states **change over time**; each item links to the canoni
 | **Open WebUI** | [PR #23745](https://github.com/open-webui/open-webui/pull/23745) | Merged 2026-04-15 to `dev` | Same PR governance as code; locale hygiene still must pass project checks |
 | **Kilocode** (`Kilo-Org/kilocode`) | [PR #8377](https://github.com/Kilo-Org/kilocode/pull/8377) | Closed unmerged 2026-06-05; bot check had passed | Target paths were deleted while the PR waited; rework invited |
 | **Hoppscotch** | [PR #6025](https://github.com/hoppscotch/hoppscotch/pull/6025) | Open; under maintainer/bot review | Coverage vs `en.json`, review thread length, high-traffic repo (~79k stars when drafted) |
-| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | **Still open**; declared resolved in a comment 2026-06-04 after PR #22914 merged 2026-05-10 | Proposal never routed to a PR; maintainer implemented directly 
+| **Hermes Agent** (`NousResearch/hermes-agent`) | [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763) | **Open** (as of 2026-09-25); two comments said it was closed, neither from a project member, and it was not closed | The proposed Hindi documentation locale has not been implemented. PR #22914, cited as resolving it, localized the UI in 15 languages but added no Hindi |
 | **OpenClaw** | [Issue #3460](https://github.com/openclaw/openclaw/issues/3460) | Closed (not planned), locked | Maintainer-stated **i18n bandwidth** + architecture readiness; consolidation policy |
 
 ---
@@ -55,15 +55,21 @@ Star counts and check states **change over time**; each item links to the canoni
 
 ## 4. NousResearch / Hermes Agent — [Issue #4763](https://github.com/NousResearch/hermes-agent/issues/4763)
 
-**Status:** **Still open** as of 2026-08-24. The underlying request was satisfied upstream by maintainer [PR #22914](https://github.com/NousResearch/hermes-agent/pull/22914), **merged 2026-05-10**, which added 8 documentation locales including Hindi. A maintainer then commented on **2026-06-04** that the issue was being closed as resolved — but **did not actually close it**, and it remains open. The proposal was never routed through a contributor PR; the maintainer implemented it directly.
+**Status (verified against the GitHub record, 2026-09-25):** **Open.** The issue, opened on 2026-04-03 by the author of this repository, proposes adding a Hindi (`hi`) locale to the project's Docusaurus documentation. It was triaged (labelled `type/docs`, `P3`, `area/i18n`), but no project member has commented on it.
 
-- **Insight:** **Docs i18n** is often a **separate decision surface** from app UI strings—maintainers must answer workflow questions (direct PR vs platform, ownership, staleness) **before** the first merge.
-- **Insight:** The issue explicitly asked for **maintainer preference on process**. That question was never answered; the maintainer implemented the locales directly instead—so **infrastructure and policy** were settled unilaterally rather than negotiated with the contributor.
-- **Insight:** Treating this as an **issue-first** proposal (not only a drive-by PR) reflects respect for maintainer load, but it also means **latency**—and here the latency ended not through alignment with the contributor, but through the maintainer doing the work themselves roughly two months later. Issue-first defers to maintainer capacity; it does not secure a contribution path.
+Two later comments said the issue was closed; neither closed it:
 
-- **Insight:** **Declared closure and actual closure diverged.** A maintainer announced the issue was resolved and closed; the tracker still shows it open nearly three months later. Anyone auditing this project's i18n backlog by issue state would double-count it — a small illustration of why locale-request state is hard to measure across projects, and why contributors cannot reliably tell whether their request is live.
+- 2026-06-04: "Closing as resolved by merged PR(s): #22914", from an account with no role in the project (GitHub association: none).
+- 2026-08-03: a comment citing documentation-conformance enforcement (umbrella issue #77807), from a contributor account.
 
-**Verification:** Originally recorded as an open proposal; a 2026-08-17 pass wrongly recorded it as “closed 2026-06-04.” Re-checked against the GitHub API on **2026-08-24**: the issue is `state: open` with `closed_at: null`; PR #22914 merged **2026-05-10**, not 06-04 (that was the date of the maintainer's comment). Both errors corrected.
+[PR #22914](https://github.com/NousResearch/hermes-agent/pull/22914), merged on 2026-05-10 by a repository collaborator, localized the gateway commands and web dashboard and added eight new locales (16 in total). **It contains no Hindi locale and no Docusaurus documentation changes**, so it does not implement what #4763 proposes.
+
+- **Insight:** Documentation i18n and interface i18n moved on separate tracks. The project localized its interface into 16 locales while the documentation-locale request stayed open and unanswered.
+- **Insight:** The issue asked which process the maintainers preferred for documentation translation. That question has not been answered on the thread, so an issue-first proposal, meant to respect maintainer capacity, has not yet produced a contribution path.
+- **Insight:** **Declared closure and actual state diverged, twice**, and both declarations came from accounts outside the project. Anyone auditing the project's i18n backlog from comments rather than issue state would count this request as done. That is a small illustration of why locale-request state is hard to measure, and why a contributor cannot easily tell whether a request is live.
+
+**Correction history:** A 2026-08-17 pass wrongly recorded the issue as closed. The 2026-08-24 fix restored the open state, but wrongly said that PR #22914 added Hindi, that the request had been satisfied, and that a maintainer declared it resolved. On 2026-09-25, re-checked against the pull request's changed files and the commenters' GitHub roles: #22914 contains no Hindi; the "resolved" comment came from an account without a project role; a second closing comment (2026-08-03) was added. See [CORRECTIONS.md](../CORRECTIONS.md).
+
 ---
 
 ## 5. OpenClaw — [Issue #3460](https://github.com/openclaw/openclaw/issues/3460)

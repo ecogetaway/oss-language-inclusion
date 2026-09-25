@@ -109,6 +109,7 @@ Unicode [UTS #55, Source Code Handling](https://www.unicode.org/reports/tr55/) a
 - [`case-studies/contribution-evidence.md`](case-studies/contribution-evidence.md)
 - [`problem-definition.md`](problem-definition.md)
 - [RFC: do these OSS language-inclusion patterns match real l10n review practice?](https://github.com/ecogetaway/oss-language-inclusion/issues/7)
+- [`CORRECTIONS.md`](CORRECTIONS.md): dated corrections to the case studies. Each case states when it was last verified against the public record.
 
 ---
 ## Tools
