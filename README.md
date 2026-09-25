@@ -12,7 +12,7 @@ Open source has standardized infrastructure for code contribution, but no equiva
 
 **Provenance.** Part of the **OSS Infrastructure Initiative** (Sanjay C. and Aniruddh Raghavendra) — an evidence-first portfolio applying one method across three under-served open source contribution domains: internationalization, accessibility, and AI contribution. First published April 2026. Full portfolio under [Companion Projects](#companion-projects) below.
 
-**Overview and related work:** the [Language inclusion workstream page](https://oss-infrastructure-initiative.netlify.app/language-inclusion) on the OSS Infrastructure Initiative site, alongside the [other workstreams](https://oss-infrastructure-initiative.netlify.app/).
+**Overview and related work:** the [Language inclusion workstream page](https://oss-infrastructure-initiative.netlify.app/language-inclusion) on the OSS Infrastructure Initiative site, alongside the [other workstreams](https://oss-infrastructure-initiative.netlify.app/). How the research is done: [method and evidence rules](https://ecogetaway.github.io/method.html).
 
 _Status: the most developed of the three domains — method published in CACM Blog and DevOps.com, with CI-ready tooling (`i18n-security-lint`). A root `i18n-signals.yml` declaration is a provisional draft under `spec/`. The CLDR plural checker is planned, not shipping._
 
@@ -213,7 +213,7 @@ Three repositories, one method: document how a contribution domain actually fail
 Case studies documented with upstream PR/issue links across Open WebUI, Kilocode, Hoppscotch, OpenClaw, and Hermes Agent.
 - Signals split into maintainer, contributor, and overview files.
 - Maintainer feedback and contributors now separated from signals.
-- Article published: "Open Source's Hidden Language Gap," CACM Blog, May 2026.
+- Article published: ["Open Source's Hidden Language Gap,"](https://cacm.acm.org/blogcacm/open-sources-hidden-language-gap/) CACM Blog, May 2026.
 - Article published: "What Five Localization Pull Requests Revealed About Open Source Governance," DevOps.com, June 2026.
 - Project website: [oss-infrastructure-initiative.netlify.app](https://oss-infrastructure-initiative.netlify.app/)
 - Licensed under Apache 2.0.
