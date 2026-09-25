@@ -1,6 +1,6 @@
 # Corrections
 
-Corrections are recorded here and at the location of the original claim. Pull-request and issue states change over time; each case study states the date it was last verified, and the linked GitHub object is authoritative.
+Corrections are recorded here and at the location of the original claim. Pull-request and issue states change over time; each case study states the date it was last verified, and the linked GitHub object is authoritative. A weekly check ([`freshness/`](freshness/)) flags new activity on every watched thread so that case studies can be re-verified.
 
 | Date | What was claimed | What the record shows | Where corrected | How found |
 |---|---|---|---|---|

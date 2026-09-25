@@ -1,0 +1,28 @@
+name: Case-study freshness
+
+# Weekly check for new activity on the upstream threads behind case-studies/ since
+# they were last verified. Opens (or comments on) a `source-changed` issue when
+# something needs review. See freshness/watchlist.yml.
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"   # Mondays 03:30 UTC = 09:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python freshness/check.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
