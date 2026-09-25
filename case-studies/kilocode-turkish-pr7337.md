@@ -1,5 +1,7 @@
 # Case Study: Kilo-Org/kilocode — Turkish — PR #7337
 
+_Status as of 25 September 2026, verified against the GitHub record. Pull request and issue states change; the linked source is authoritative. Corrections to this case are logged in [CORRECTIONS.md](../CORRECTIONS.md)._
+
 ## Repository
 [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode)
 
@@ -10,24 +12,25 @@ Pull Request
 Turkish (tr)
 
 ## What Happened
-A contributor submitted a Turkish translation PR on March 19, 2026. The automated bot review passed after the contributor made fixes — indicating the contribution met technical standards. As of April 28, 2026 — 40 days after submission — no human review has been assigned and the review pathway forward is unclear to the contributor.
+A contributor completed the Turkish translation file, restoring earlier work from #7035 and adding 47 keys introduced in a later release (1 file, +1,165). The project's review bot reported one critical issue: Turkish was "not registered as a supported locale … so this new `tr.ts` file is still never selected and Turkish users still fall back to English." (The bot's check itself showed as passed; the finding was in its report.) Another contributor commented "Looks great" the next day. Five weeks later, a repository collaborator asked which of three open Turkish pull requests should be merged, and whether any had been tested. The pull request's Screenshots and "How to Test" sections had been left empty. With no reply to that question, the pull request was closed manually as stale, with an invitation to reopen with a fresh pull request.
 
 ## Timeline
-- Opened: March 19, 2026
-- Status as of April 28, 2026: Still open — 40 days
-- Bot review: Passed after fixes
+- Opened: 2026-03-19
+- Review bot report (one critical issue): 2026-03-19
+- Collaborator's question about competing pull requests: 2026-04-24
+- Closed (manually, not by a bot): 2026-04-30 (42 days)
 
 ## Closing Reason
-Not closed — still open and waiting
+Closed as stale after the question about which of three Turkish pull requests to merge went unanswered.
 
 ## Maintainer Response
-None visible — no human review assigned
+Yes: a collaborator asked which pull request to merge and whether it had been tested; the closing comment invited a fresh pull request.
 
 ## Why This Matters
-This PR sits alongside our Hindi PR #8377 on the same repository — also open since April 1, 2026, also bot-approved, also awaiting human review. Two PRs in different languages, same repo, same pattern. The bottleneck is not automated review — it is human review assignment. Without a named reviewer for language contributions, approved PRs wait indefinitely with no pathway forward visible to the contributor.
+Three things stood between this translation and its users, and none of them was translation quality: registering the locale so the app would load it, evidence that it worked (screenshots or test steps), and a decision about which of three competing pull requests was authoritative. Each is a review-routing or verification step that a language-contribution workflow could make explicit before a contributor starts.
 
 ## Related Cases
-See also: Kilo-Org/kilocode#8377 (Hindi — same pattern, same repo)
+Kilo-Org/kilocode#8377 (Hindi, opened by the author of this repository): opened 2026-04-05 and closed 2026-06-05 because the paths it targeted had been removed from the repository. The reviewer invited a reworked pull request against the current i18n files and noted that the project has no structured workflow for i18n contributions beyond normal pull-request review. See [contribution-evidence.md](contribution-evidence.md).
 
 ## Source
 [github.com/Kilo-Org/kilocode/pull/7337](https://github.com/Kilo-Org/kilocode/pull/7337)

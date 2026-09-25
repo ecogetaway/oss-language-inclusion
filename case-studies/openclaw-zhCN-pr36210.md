@@ -1,5 +1,7 @@
 # Case Study: openclaw/openclaw — Chinese (Simplified) — PR #36210
 
+_Status as of 25 September 2026, verified against the GitHub record. Pull request and issue states change; the linked source is authoritative. Corrections to this case are logged in [CORRECTIONS.md](../CORRECTIONS.md)._
+
 ## Repository
 [openclaw/openclaw](https://github.com/openclaw/openclaw)
 
@@ -10,24 +12,24 @@ Pull Request
 Chinese Simplified (zh-CN)
 
 ## What Happened
-A contributor submitted a Chinese (Simplified) i18n PR. The automated review returned a confidence rating of 5/5 — the highest possible — indicating the contribution was safe to merge. Despite this unambiguous automated clearance, no human reviewer was assigned. The PR was subsequently closed by the stale bot after approximately 46 days of inactivity.
+A contributor wired the Channels dashboard views to the project's existing i18n system and added zh-CN strings (5 files, +113/−50). One automated reviewer (Greptile) gave it "Confidence Score: 5/5" and described it as safe to merge. The repository's own `check` job, however, failed on the pull request's final commit. No person commented on or reviewed the pull request. The stale bot marked it inactive and then closed it. The closing message named a route back: posting in a Discord channel "to talk to a maintainer".
 
 ## Timeline
-- Opened: Early 2026
-- Closed: ~46 days later
-- Days open: ~46
+- Opened: 2026-03-05
+- Marked stale: 2026-04-17
+- Closed: 2026-04-20 (46 days)
 
 ## Closing Reason
-Bot-stale — no human review assigned despite bot confidence 5/5
+Closed by the stale bot for inactivity.
 
 ## Maintainer Response
-None — zero human comments
+None on the thread; automated review only.
 
 ## Why This Matters
-This case illustrates that automated review passing is not sufficient — human review assignment is the missing piece. A contribution that a bot rated 5/5 confidence sat unreviewed for 46 days and was then discarded. The structural gap is not technical capability; it is workflow governance.
+A positive rating from one automated reviewer is not project clearance: a required check was failing and no person looked at the change. The case shows the gap between automated signals and human review assignment, and that the route to a human (a Discord channel named in the closing message) sat outside the pull request itself.
 
 ## Related Cases
-See also: openclaw/openclaw#3460 (Hindi — closed, bandwidth) and openclaw/openclaw#34848 (Chinese Simplified feature request — closed, architectural)
+See also: openclaw/openclaw#3460 (canonical i18n tracker — closed, not planned) and openclaw/openclaw#34848 (Chinese Simplified feature request — closed, architectural)
 
 ## Source
 [github.com/openclaw/openclaw/pull/36210](https://github.com/openclaw/openclaw/pull/36210)
