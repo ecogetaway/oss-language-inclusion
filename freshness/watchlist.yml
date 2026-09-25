@@ -1,0 +1,37 @@
+# Upstream threads behind case-studies/ and case-studies/contribution-evidence.md,
+# checked weekly by .github/workflows/case-freshness.yml (Mondays 03:30 UTC = 09:00 IST).
+#
+# Any activity on a watched thread after `verified` (a comment, a state change, a label)
+# is reported for review. After reviewing: update the case study if needed, log any
+# correction in CORRECTIONS.md, then set `verified` to the review date.
+# Only threads re-verified against the public record are listed here.
+
+sources:
+  - id: openclaw-zhCN-pr36210
+    verified: 2026-09-25
+    threads: [{repo: openclaw/openclaw, number: 36210}]
+  - id: openclaw-pr42089
+    verified: 2026-09-25
+    threads: [{repo: openclaw/openclaw, number: 42089}]
+  - id: awslabs-korean-pr972
+    verified: 2026-09-25
+    threads: [{repo: awslabs/data-on-eks, number: 972}]
+  - id: kilocode-turkish-pr7337
+    verified: 2026-09-25
+    threads:
+      - {repo: Kilo-Org/kilocode, number: 7337}
+      - {repo: Kilo-Org/kilocode, number: 8377}
+  - id: plex-rewind-portuguese-pr354
+    verified: 2026-09-25
+    threads: [{repo: RaunoT/plex-rewind, number: 354}]
+  - id: home-assistant-pr162254
+    verified: 2026-09-25
+    threads: [{repo: home-assistant/core, number: 162254}]
+  - id: hermes-agent-issue4763
+    verified: 2026-09-25
+    threads:
+      - {repo: NousResearch/hermes-agent, number: 4763}
+      - {repo: NousResearch/hermes-agent, number: 22914}
+  - id: hoppscotch-pr5636
+    verified: 2026-09-25
+    threads: [{repo: hoppscotch/hoppscotch, number: 5636}]
