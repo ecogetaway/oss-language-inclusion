@@ -1,5 +1,7 @@
 # Case Study: hoppscotch/hoppscotch — Multiple Locales — PR #5636
 
+_Status as of 25 September 2026, verified against the GitHub record. Pull request and issue states change; the linked source is authoritative. Corrections to this case are logged in [CORRECTIONS.md](../CORRECTIONS.md)._
+
 ## Repository
 [hoppscotch/hoppscotch](https://github.com/hoppscotch/hoppscotch)
 
@@ -7,24 +9,24 @@
 Pull Request
 
 ## Language
-Multiple locales (translation file improvement)
+Multiple locales (translation file improvements)
 
 ## What Happened
-A contributor submitted PR #5636 titled "Improve translation files" — addressing issues across multiple locale files in Hoppscotch, an API development tool with over 70,000 GitHub stars. The PR received zero comments from any maintainer. It was closed unmerged after approximately 82 days with no explanation, no feedback, and no credit to the contributor.
+A contributor opened a pull request titled "Improve translation files", changing 30 locale files (+34,757/−965). On the day it opened, an automated reviewer reported 40 issues across those files. No project member commented on or reviewed the pull request. Eighty-three days later the contributor closed it themselves, unmerged, without a closing comment. A later comment from the author of this repository (2026-08-13) offered the project a right of reply; there has been no response.
 
 ## Timeline
-- Opened: 2025
-- Closed: ~82 days later
-- Days open: ~82
+- Opened: 2025-11-30
+- Automated review (40 issues reported): 2025-11-30
+- Closed by its author, unmerged: 2026-02-21 (83 days)
 
 ## Closing Reason
-Closed unmerged — no explanation provided
+Closed by the contributor; no reason given on the thread.
 
 ## Maintainer Response
-Zero comments — complete silence
+None on the thread.
 
 ## Why This Matters
-This is not a rejection — it is an absence. The contributor received no feedback, no guidance, no explanation, and no recognition. The work simply disappeared. This is the recognition gap: language contributors whose work is never merged and never acknowledged have no incentive to continue. A CONTRIBUTING-i18n.md with clear review expectations and a named reviewer would have prevented this outcome entirely.
+Two patterns from other cases meet here: a very large multi-locale change, which is hard for any reviewer to assess, and automated findings that no person triaged. The contributor withdrew without any human response to either the work or the automated report. A project that states how it wants translation changes scoped, and who triages automated findings on locale files, gives contributors a way to act on such a report.
 
 ## Source
 [github.com/hoppscotch/hoppscotch/pull/5636](https://github.com/hoppscotch/hoppscotch/pull/5636)
