@@ -78,9 +78,14 @@ Code contribution has mature shared workflows; language contribution often still
 
 ## Why Now
 
-- Open-source AI tools are increasingly global.
-- Non-English developer communities continue to grow.
-- Localization demand appears in public issues and PRs without equivalent shared infrastructure.
+## Why Now
+
+- **Open source is becoming multilingual — unevenly.** A 2026 study of 9.14 billion GitHub issues, pull requests and discussions across 62,500 repositories found non-English participation rising steadily since 2015, especially in Korean, Chinese and Russian. It also found that non-English projects receive less visibility and participation: they "may struggle to attract attention even when active and well-maintained." Language, the authors conclude, remains both a resource and a barrier in open collaboration ([Bhuiyan, Bala Kumar & Staicu, ICSE 2026](https://dl.acm.org/doi/10.1145/3744916.3787766); [preprint](https://arxiv.org/abs/2602.19446)).
+- **Maintainers name the review gap themselves.** Closing a Hindi localization pull request in June 2026, a Kilo Code maintainer wrote that language review "does depend on contributor/maintainer bandwidth right now" ([Kilo-Org/kilocode#8377](https://github.com/Kilo-Org/kilocode/pull/8377#issuecomment-4631698167)).
+- **The infrastructure has not caught up.** Code contributions pass through linters, CI and review; translated strings usually pass through none of them. The evidence in this repository documents where that shows.
+
+
+---
 
 ---
 
