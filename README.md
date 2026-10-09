@@ -10,7 +10,7 @@ Open source has standardized infrastructure for code contribution, but no equiva
 | [`tools/i18n-security-lint`](tools/i18n-security-lint/) | CI scan for defects in translated strings | **Shipping** |
 | [`tools/cldr-plural-check`](tools/cldr-plural-check/) | Plural-form completeness vs CLDR | **Planned — not implemented** |
 
-**Provenance.** Part of the **OSS Infrastructure Initiative** (Sanjay C. and Aniruddh Raghavendra) — an evidence-first portfolio applying one method across three under-served open source contribution domains: internationalization, accessibility, and AI contribution. First published April 2026. Full portfolio under [Companion Projects](#companion-projects) below.
+**Provenance.** Part of the **OSS Infrastructure Initiative** (Sanjay C. and Anirudh Raghavendra) — an evidence-first portfolio applying one method across three under-served open source contribution domains: internationalization, accessibility, and AI contribution. First published April 2026. Full portfolio under [Companion Projects](#companion-projects) below.
 
 **Overview and related work:** the [Language inclusion workstream page](https://oss-infrastructure-initiative.netlify.app/language-inclusion) on the OSS Infrastructure Initiative site, alongside the [other workstreams](https://oss-infrastructure-initiative.netlify.app/). How the research is done: [method and evidence rules](https://ecogetaway.github.io/method.html).
 
