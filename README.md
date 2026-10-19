@@ -149,6 +149,7 @@ A provisional root-file spec so a project can declare whether it is ready to rev
 See **[`CONTRIBUTING.md`](CONTRIBUTING.md)** for where to file issues, how to use templates, and how listing in [`contributors/README.md`](contributors/README.md) works (opt-in only).
 
 - **Volunteer on-ramp (pinned):** [issue #6](https://github.com/ecogetaway/oss-language-inclusion/issues/6) is intake, not a task. First work is already scoped — first comment on the issue you want wins:
+  - [Hindi top-up: claim a batch of rakazo's untranslated strings](https://github.com/ecogetaway/oss-language-inclusion/issues/24)
   - [Source and screen candidates for the next 2–3 i18n case studies](https://github.com/ecogetaway/oss-language-inclusion/issues/14)
 - **Inclusion RFC:** [issue #7](https://github.com/ecogetaway/oss-language-inclusion/issues/7)
 - Draft `i18n-signals.yml` fields (not the on-ramp): [issue #8](https://github.com/ecogetaway/oss-language-inclusion/issues/8)
